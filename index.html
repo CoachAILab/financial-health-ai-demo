@@ -1,0 +1,885 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,700;1,8..60,700&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--blue:#001391;--sand:#F7F8F8;--night:#070E46;--serene:#85C8FF;--white:#FFFFFF;--grey:#46536D;--lg:#E2E6EA;--red:#D0021B;--green:#048A24;--amber:#E87722}
+body{font-family:'Lato',sans-serif;background:#CBD0D5;display:flex;justify-content:center;min-height:100vh}
+.mobile{width:100%;max-width:414px;background:var(--sand);min-height:100vh;padding-bottom:80px}
+.top-bar{background:var(--white);padding:12px 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--lg)}
+.logo{font-size:22px;font-weight:700;color:var(--blue);letter-spacing:-1px}
+.top-icons{display:flex;gap:10px}
+.top-icon{width:30px;height:30px;border-radius:50%;border:1px solid var(--lg);display:flex;align-items:center;justify-content:center}
+.top-icon svg{width:15px;height:15px;fill:var(--grey)}
+.tab-bar{background:var(--white);display:flex;border-bottom:2px solid var(--lg)}
+.tab{flex:1;text-align:center;padding:11px 8px;font-size:13px;font-weight:700;color:var(--grey);cursor:pointer;position:relative}
+.tab.active{color:var(--blue)}
+.tab.active::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:2px;background:var(--blue)}
+.client-selector{display:flex;gap:8px;padding:12px 20px 6px;overflow-x:auto;scrollbar-width:none}
+.client-selector::-webkit-scrollbar{display:none}
+.client-btn{flex-shrink:0;padding:6px 12px;border-radius:20px;border:1.5px solid var(--lg);background:var(--white);font-size:11px;font-family:'Lato',sans-serif;font-weight:700;color:var(--grey);cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:5px}
+.client-btn.active{background:var(--blue);color:white;border-color:var(--blue)}
+.vdot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.vdot-ap{background:var(--green)}.vdot-rev{background:var(--amber)}.vdot-rec{background:var(--red)}
+.client-btn.active .vdot-ap{background:#6ef0a0}.client-btn.active .vdot-rev{background:#ffd4a8}.client-btn.active .vdot-rec{background:#ff8fa0}
+.hero{padding:22px 20px 40px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-30px;right:-30px;width:110px;height:110px;border-radius:50%;background:rgba(133,200,255,0.1)}
+.hero-badge{display:inline-block;background:rgba(133,200,255,0.2);color:var(--serene);font-size:10px;font-weight:700;padding:3px 10px;border-radius:4px;margin-bottom:12px;letter-spacing:.6px;text-transform:uppercase}
+.hero-titulo{font-family:'Source Serif 4',serif;font-size:21px;color:white;line-height:1.3;margin-bottom:8px}
+.hero-titulo i{font-style:italic}
+.hero-subtitulo{font-size:13px;color:rgba(255,255,255,0.72);line-height:1.5}
+.hero-pos{background:#04A94A}.hero-neu{background:#1464A5}.hero-neg{background:var(--blue)}
+.ai-accordion{background:var(--white);margin:0 20px;margin-top:-18px;border-radius:14px;box-shadow:0 4px 12px rgba(0,19,145,0.07);overflow:hidden;position:relative;z-index:2}
+.ai-header{display:flex;align-items:center;justify-content:space-between;padding:13px 14px;cursor:pointer;user-select:none}
+.ai-header-left{display:flex;align-items:center;gap:10px}
+.badge-ia{background:var(--serene);color:var(--blue);font-size:10px;font-weight:700;padding:3px 8px;border-radius:4px;text-transform:uppercase;letter-spacing:.5px;flex-shrink:0}
+.ai-label{font-size:14px;font-weight:700;color:var(--night)}
+.ai-sublabel{font-size:11px;color:var(--grey);margin-top:1px}
+.ai-chev{width:18px;height:18px;transition:transform .3s;color:var(--grey);flex-shrink:0}
+.ai-chev.open{transform:rotate(180deg)}
+.ai-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.ai-body.open{max-height:1600px}
+.ai-inner{padding:0 14px 14px;border-top:1px solid var(--lg)}
+.ai-sec{margin-top:12px}
+.ai-sl{font-size:10px;font-weight:700;color:var(--grey);text-transform:uppercase;letter-spacing:.7px;margin-bottom:7px}
+.ai-res{font-size:13px;color:var(--grey);line-height:1.6;background:var(--sand);border-radius:8px;padding:11px}
+.ai-items{display:flex;flex-direction:column;gap:7px}
+.ai-item{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--night);line-height:1.5}
+.dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;margin-top:5px}
+.dot.g{background:var(--green)}.dot.a{background:var(--amber)}.dot.r{background:var(--red)}
+.ai-rec{background:#EFF4FF;border-left:3px solid var(--blue);border-radius:0 8px 8px 0;padding:10px 12px;font-size:13px;color:var(--night);line-height:1.5}
+.section-header{padding:16px 20px 8px;display:flex;align-items:center;justify-content:space-between}
+.section-title{font-family:'Source Serif 4',serif;font-size:17px;color:var(--blue);margin:0}
+.section-title i{font-style:italic}
+.slider-outer{padding:0 20px 12px;width:100%}
+.slider-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;scroll-behavior:smooth}
+.slider-track::-webkit-scrollbar{display:none}
+.detail-card{min-width:100%;max-width:100%;scroll-snap-align:start;flex-shrink:0;background:var(--white);border-radius:14px;box-shadow:0 2px 8px rgba(0,19,145,0.06);padding:18px}
+.dc-title{font-family:'Source Serif 4',serif;font-size:16px;font-weight:700;color:var(--night);display:flex;align-items:center;gap:8px}
+.q-icon{width:17px;height:17px;border-radius:50%;border:1.5px solid var(--lg);display:inline-flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;color:var(--grey);cursor:pointer;flex-shrink:0;font-family:'Lato',sans-serif}
+.dc-main-row{display:flex;justify-content:space-between;align-items:baseline;margin:14px 0 6px;gap:8px}
+.dc-main-label{font-size:13px;font-weight:700;color:var(--night);flex:1}
+.dc-main-val{font-size:17px;font-weight:700;color:var(--night);white-space:nowrap}
+.dc-bar{height:6px;background:var(--lg);border-radius:3px;margin-bottom:10px;overflow:hidden}
+.dc-bar-fill{height:100%;border-radius:3px;background:var(--serene)}
+.dc-bar-fill.red{background:var(--red)}
+.dc-rows{display:flex;flex-direction:column;gap:3px;margin-bottom:12px}
+.dc-row{font-size:13px;color:var(--grey)}
+.dc-row b{color:var(--night)}
+.dc-row.red{color:var(--red)}.dc-row.green{color:var(--green)}.dc-row.amber{color:var(--amber)}
+.dc-div{height:1px;background:var(--lg);margin:10px 0}
+.dc-eh{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+.dc-el{font-size:13px;font-weight:700;color:var(--night)}
+.dc-lnk{font-size:12px;font-weight:700;color:var(--blue);cursor:pointer}
+.dc-et{font-size:12px;color:var(--grey);line-height:1.5;margin-bottom:8px}
+.chart-wrap{height:80px;position:relative}
+.chart-wrap canvas{width:100%!important;height:100%!important}
+.card-nav{display:flex;justify-content:space-between;align-items:center;padding:8px 0 0}
+.cnl{font-size:12px;color:var(--grey)}
+.cna{display:flex;gap:10px}
+.nb{width:28px;height:28px;border-radius:50%;border:1px solid var(--lg);background:var(--white);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:15px;color:var(--night);line-height:1}
+.nb.off{opacity:.25;cursor:default;pointer-events:none}
+.client-data{display:none}.client-data.active{display:block}
+.bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:414px;background:white;border-top:1px solid var(--lg);display:flex;padding:8px 0 14px;z-index:10}
+.bnav{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer}
+.bnav svg{width:20px;height:20px;fill:var(--grey)}.bnav.active svg{fill:var(--blue)}
+.bnav span{font-size:10px;font-weight:700;color:var(--grey)}.bnav.active span{color:var(--blue)}
+
+/* ═══════════════════════════════════════════════════════════
+   EVALUACIÓN — estilos nuevos
+   ═══════════════════════════════════════════════════════════ */
+.eval-card{background:var(--white);margin:10px 20px 0;border-radius:14px;box-shadow:0 4px 12px rgba(0,19,145,0.07);overflow:hidden;position:relative;z-index:2}
+.eval-topbar{height:3px;width:100%}
+.eval-topbar.ap{background:var(--green)}.eval-topbar.rev{background:var(--amber)}.eval-topbar.rec{background:var(--red)}
+.eval-hdr{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;cursor:pointer;user-select:none}
+.eval-hdr-l{display:flex;align-items:center;gap:9px}
+.badge-ev{font-size:10px;font-weight:700;padding:3px 9px;border-radius:4px;letter-spacing:.5px;text-transform:uppercase;flex-shrink:0}
+.badge-ev.ap{background:#E6F9EC;color:var(--green)}
+.badge-ev.rev{background:#FFF3E8;color:var(--amber)}
+.badge-ev.rec{background:#FDEAED;color:var(--red)}
+.eval-title{font-size:13px;font-weight:700;color:var(--night)}
+.eval-sub{font-size:11px;color:var(--grey);margin-top:1px}
+.eval-right{display:flex;align-items:center;gap:6px}
+.eval-sn{font-size:21px;font-weight:700}
+.eval-sm{font-size:12px;color:var(--grey)}
+.sn-ap{color:var(--green)}.sn-rev{color:var(--amber)}.sn-rec{color:var(--red)}
+.eval-chev{width:16px;height:16px;transition:transform .3s;color:var(--grey);flex-shrink:0}
+.eval-chev.open{transform:rotate(180deg)}
+.eval-bdy{max-height:0;overflow:hidden;transition:max-height .5s ease}
+.eval-bdy.open{max-height:1200px}
+.eval-inn{padding:0 14px 16px;border-top:1px solid var(--lg)}
+.eval-summ{font-size:12px;color:var(--grey);line-height:1.6;background:var(--sand);border-radius:8px;padding:10px 12px;margin:12px 0 10px;font-style:italic}
+.radar-wrap{height:190px;position:relative;margin:4px 0 14px}
+.radar-wrap canvas{width:100%!important;height:100%!important}
+.ev-blk{margin-bottom:4px}
+.ev-blk-hdr{display:flex;justify-content:space-between;align-items:center;padding:6px 0 5px}
+.ev-blk-nm{font-size:10px;font-weight:700;color:var(--grey);text-transform:uppercase;letter-spacing:.7px}
+.ev-blk-avg{font-size:12px;font-weight:700;color:var(--night)}
+.ev-kpi{display:flex;align-items:center;gap:8px;margin-bottom:5px}
+.ev-kpi-nm{font-size:12px;color:var(--night);min-width:118px;flex-shrink:0}
+.ev-kpi-bar{flex:1;height:4px;background:var(--lg);border-radius:2px;overflow:hidden}
+.ev-kpi-fill{height:100%;border-radius:2px;transition:width .6s ease}
+.kf5{background:var(--blue)}.kf4{background:var(--serene)}.kf3{background:var(--amber)}.kf2,.kf1{background:var(--red)}
+.ev-kpi-sc{font-size:12px;font-weight:700;color:var(--night);width:14px;text-align:right;flex-shrink:0}
+.ev-warn{font-size:10px;color:var(--red);margin-left:2px;font-weight:700}
+.ev-sep{height:1px;background:var(--lg);margin:7px 0 9px}
+
+/* ═══════════════════════════════════════════════════════════
+   GASTOS E INGRESOS — nueva sección acordeón
+   ═══════════════════════════════════════════════════════════ */
+.gi-card{background:var(--white);margin:10px 20px 0;border-radius:14px;box-shadow:0 4px 12px rgba(0,19,145,0.07);overflow:hidden}
+.gi-hdr{display:flex;align-items:center;justify-content:space-between;padding:13px 14px;cursor:pointer;user-select:none}
+.gi-hdr-l{display:flex;align-items:center;gap:10px}
+.gi-label{font-size:14px;font-weight:700;color:var(--night)}
+.gi-sublabel{font-size:11px;color:var(--grey);margin-top:1px}
+.gi-chev{width:18px;height:18px;transition:transform .3s;color:var(--grey);flex-shrink:0}
+.gi-chev.open{transform:rotate(180deg)}
+.gi-bdy{max-height:0;overflow:hidden;transition:max-height .45s ease}
+.gi-bdy.open{max-height:2400px}
+.gi-inn{padding:0 14px 16px;border-top:1px solid var(--lg)}
+
+/* tabs de período */
+.gi-tabs{display:flex;gap:4px;margin:12px 0 14px;background:var(--sand);border-radius:8px;padding:3px}
+.gi-tab{flex:1;text-align:center;padding:5px 4px;font-size:11px;font-weight:700;color:var(--grey);border-radius:6px;cursor:pointer;transition:all .2s}
+.gi-tab.active{background:var(--white);color:var(--blue);box-shadow:0 1px 4px rgba(0,19,145,0.10)}
+
+/* panel de período */
+.gi-panel{display:none}.gi-panel.active{display:block}
+
+/* bloque ingresos / gastos */
+.gi-blk{margin-bottom:14px}
+.gi-blk-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.gi-blk-title{font-size:10px;font-weight:700;color:var(--grey);text-transform:uppercase;letter-spacing:.7px}
+.gi-blk-total{font-size:15px;font-weight:700;color:var(--night)}
+.gi-blk-total.green{color:var(--green)}.gi-blk-total.red{color:var(--red)}
+
+/* fila de fuente / subcategoría */
+.gi-row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.gi-row-label{font-size:12px;color:var(--night);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.gi-row-bar{width:80px;height:4px;background:var(--lg);border-radius:2px;flex-shrink:0;overflow:hidden}
+.gi-row-fill{height:100%;border-radius:2px}
+.gi-row-val{font-size:12px;font-weight:700;color:var(--night);width:62px;text-align:right;flex-shrink:0}
+
+/* chips de alerta */
+.gi-alerts{display:flex;flex-direction:column;gap:6px;margin-top:10px}
+.gi-alert{display:flex;align-items:flex-start;gap:8px;padding:9px 10px;border-radius:8px;font-size:12px;line-height:1.5}
+.gi-alert.alta{background:#FDEAED;color:#A8000F}
+.gi-alert.media{background:#FFF3E8;color:#8B4400}
+.gi-alert-ico{font-size:14px;flex-shrink:0;margin-top:1px}
+
+/* balance badge */
+.gi-balance{display:flex;justify-content:space-between;align-items:center;background:var(--sand);border-radius:8px;padding:10px 12px;margin:6px 0 10px}
+.gi-balance-label{font-size:12px;color:var(--grey)}
+.gi-balance-val{font-size:14px;font-weight:700}
+
+/* estabilidad y tendencia */
+.gi-meta-row{display:flex;align-items:center;gap:0;background:var(--sand);border-radius:8px;padding:9px 12px;margin:12px 0 14px}
+.gi-meta-blk{display:flex;align-items:center;gap:6px;flex:1}
+.gi-meta-sep{width:1px;height:24px;background:var(--lg);margin:0 10px;flex-shrink:0}
+.gi-meta-label{font-size:11px;font-weight:700;color:var(--grey);margin-right:2px;white-space:nowrap}
+.gi-meta-pill{font-size:10px;font-weight:700;padding:3px 7px;border-radius:20px;white-space:nowrap}
+.gi-meta-pill.neutral{background:#E6F9EC;color:var(--green)}
+.gi-meta-pill.good{background:#E6F9EC;color:var(--green)}
+.gi-meta-pill.warn{background:#FFF3E8;color:var(--amber)}
+.gi-meta-pill.bad{background:#FDEAED;color:var(--red)}
+.gi-meta-pill-wrap{display:flex;flex-direction:column;align-items:flex-start;gap:3px}
+.gi-meta-pill-ctx{font-size:9px;color:var(--grey);letter-spacing:.3px;margin-bottom:1px}
+
+.gi-sep{height:1px;background:var(--lg);margin:10px 0}
+</style>
+
+<div class="mobile">
+  <div class="top-bar">
+    <div class="logo">BBVA</div>
+    <div class="top-icons">
+      <div class="top-icon"><svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg></div>
+      <div class="top-icon"><svg viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg></div>
+    </div>
+  </div>
+  <div class="tab-bar">
+    <div class="tab">Patrimonio</div>
+    <div class="tab active">Coach financiero</div>
+  </div>
+  <div class="client-selector">
+    <button class="client-btn active" onclick="sc(0)">ES&#183;&#183;578 <span class="vdot vdot-ap"></span></button>
+    <button class="client-btn" onclick="sc(1)">ES&#183;&#183;758 <span class="vdot vdot-ap"></span></button>
+    <button class="client-btn" onclick="sc(2)">ES&#183;&#183;623 <span class="vdot vdot-ap"></span></button>
+    <button class="client-btn" onclick="sc(3)">ES&#183;&#183;793 <span class="vdot vdot-rev"></span></button>
+  </div>
+
+  <!-- ══════════ CLIENTE 0: ES··578 ══════════ -->
+  <div id="c0" class="client-data active">
+    <div class="hero hero-neg">
+      <div class="hero-badge">COACH IA</div>
+      <div class="hero-titulo">Tus finanzas van por <i>buen camino</i></div>
+      <div class="hero-subtitulo">Ahorro estable y gastos controlados, aunque se puede reducir el gasto en ocio para mejorar aún más.</div>
+    </div>
+    <div class="ai-accordion">
+      <div class="ai-header" onclick="tog('ab0','ac0')">
+        <div class="ai-header-left"><span class="badge-ia">IA</span><div><div class="ai-label">Explicabilidad con IA</div><div class="ai-sublabel">An&#225;lisis detallado de tu situaci&#243;n</div></div></div>
+        <svg class="ai-chev" id="ac0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="ai-body" id="ab0"><div class="ai-inner">
+        <div class="ai-sec"><div class="ai-sl">Diagn&#243;stico</div><div class="ai-res">Tu perfil financiero muestra un ahorro estable y una gestión de gastos controlada. Sin embargo, se detecta un gasto elevado en ocio, especialmente en bares y restaurantes, que podría reducirse para fortalecer aún más tu posición.</div></div>
+        <div class="ai-sec"><div class="ai-sl">Puntos fuertes</div><div class="ai-items">
+          <div class="ai-item"><div class="dot g"></div><span>Ahorro estable con un promedio mensual de 2.862 &#8364;.</span></div>
+          <div class="ai-item"><div class="dot g"></div><span>Ingresos consistentes y crecientes, con un promedio mensual de 2.167 &#8364;.</span></div>
+          <div class="ai-item"><div class="dot g"></div><span>Gastos en subcategorías obligatorias bien gestionados.</span></div>
+        </div></div>
+        <div class="ai-sec"><div class="ai-sl">&#193;reas de mejora</div><div class="ai-items">
+          <div class="ai-item"><div class="dot a"></div><span>El gasto en ocio, especialmente en bares y restaurantes, es elevado y podría reducirse.</span></div>
+          <div class="ai-item"><div class="dot a"></div><span>Hay meses con picos de gastos en subcategorías prescindibles como viajes y ocio que podrían evitarse.</span></div>
+        </div></div>
+        <div class="ai-sec"><div class="ai-sl">Recomendaci&#243;n</div><div class="ai-rec">Reduce el gasto en bares y restaurantes para mejorar tu ahorro de forma sostenida.</div></div>
+      </div></div>
+    </div>
+
+    <!-- EVAL CARD 0 -->
+    <div class="eval-card">
+      <div class="eval-topbar ap"></div>
+      <div class="eval-hdr" onclick="togEval('ev0','ec0')">
+        <div class="eval-hdr-l">
+          <span class="badge-ev ap">&#10003; Aprobado</span>
+          <div><div class="eval-title">Evaluaci&#243;n del diagn&#243;stico</div><div class="eval-sub">LLM evaluador &middot; Nova Pro</div></div>
+        </div>
+        <div class="eval-right">
+          <div><span class="eval-sn sn-ap">4.5</span><span class="eval-sm">/5</span></div>
+          <svg class="eval-chev" id="ec0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+      <div class="eval-bdy" id="ev0"><div class="eval-inn">
+        <div class="eval-summ">&#171;Diagn&#243;stico preciso y accionable. La detecci&#243;n del gasto at&#237;pico en Parking es el hallazgo m&#225;s valioso. Podr&#237;a a&#241;adir contexto sobre si el pico de octubre fue puntual o responde a un patr&#243;n.&#187;</div>
+        <div class="radar-wrap"><canvas id="r0"></canvas></div>
+        <div class="ev-blk">
+          <div class="ev-blk-hdr"><span class="ev-blk-nm">Calidad de respuesta</span><span class="ev-blk-avg">4.8 / 5</span></div>
+          <div class="ev-kpi"><span class="ev-kpi-nm">Precisi&#243;n</span><div class="ev-kpi-bar"><div class="ev-kpi-fill kf5" style="width:100%"></div></div><span class="ev-kpi-sc">5</span></div>
+          <div class="ev-kpi"><span class="ev-kpi-nm">Relevancia</span><div class="ev-kpi-bar"><div class="ev-kpi-fill kf5" style="width:100%"></div></div><span class="ev-kpi-sc">5</span></div>
+          <div class="ev-kpi"><span class="ev-kpi-nm">Completitud</span><div class="ev-kpi-bar"><div class="ev-kpi-fill kf5" style="width:100%"></div></div><span class="ev-kpi-sc">5</span></div>
+          <div class="ev-kpi"><span class="ev-kpi-nm">Coherencia</span><div class="ev-kpi-bar"><div class="ev-kpi-fill kf4" style="width:80%"></div></div><span class="ev-kpi-sc">4</span></div>
+          <div class="ev-kpi"><span class="ev-kpi-nm">Groundedness</span><div class="ev-kpi-bar"><div class="ev-kpi-fill kf5" style="width:100%"></div></div><span class="ev-kpi-sc">5</span></div>
+        </div>
+        <div class="ev-sep"></div>
+        <div class="ev-blk">
+          <div class="ev-blk-hdr"><span class="ev-blk-nm">Riesgo y control</span><span class="ev-blk-avg">4.3 / 5</span></div>
+          <div class="ev-kpi"><span class="ev-kpi-nm">Alucinaci&#243;n</span><div class="ev-kpi-bar"><div class="ev-kpi-fill kf5" style="width:100%"></div></div><span class="ev-kpi-sc">5</span></div>
+          <div class="ev-kpi"><span class="ev-kpi-nm">Restricciones</span><div class="ev-kpi-bar"><div class="ev-kpi-fill kf4" style="width:80%"></div></div><span class="ev-kpi-sc">4</span></div>
+          <div class="ev-kpi"><span class="ev-kpi-nm">Tono y estilo</span><div class="ev-kpi-bar"><div class="ev-kpi-fill kf4" style="width:80%"></div></div><span class="ev-kpi-sc">4</span></div>
+        </div>
+        <div class="ev-sep"></div>
+        <div class="ev-blk">
+          <div class="ev-blk-hdr"><span class="ev-blk-nm">Impacto de negocio</span><span class="ev-blk-avg">4.5 / 5</span></div>
+          <div class="ev-kpi"><span class="ev-kpi-nm">Utilidad</span><div class="ev-kpi-bar"><div class="ev-kpi-fill kf4" style="width:80%"></div></div><span class="ev-kpi-sc">4</span></div>
+          <div class="ev-kpi"><span class="ev-kpi-nm">Adecuaci&#243;n funcional</span><div class="ev-kpi-bar"><div class="ev-kpi-fill kf5" style="width:100%"></div></div><span class="ev-kpi-sc">5</span></div>
+        </div>
+      </div></div>
+    </div>
+
+
+    <!-- GASTOS E INGRESOS CARD 0 -->
+    <div class="gi-card">
+      <div class="gi-hdr" onclick="togGI('gi0','gc0')">
+        <div class="gi-hdr-l">
+          <span class="badge-ia">IA</span>
+          <div>
+            <div class="gi-label">Ingresos y gastos detallados</div>
+            <div class="gi-sublabel">Desglose por período · alertas activas</div>
+          </div>
+        </div>
+        <svg class="gi-chev" id="gc0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="gi-bdy" id="gi0"><div class="gi-inn">
+
+        <!-- tabs de período -->
+        <div class="gi-tabs">
+          <div class="gi-tab active" onclick="switchPeriod(0,this,'p0_1m')">1M</div>
+          <div class="gi-tab" onclick="switchPeriod(0,this,'p0_3m')">3M</div>
+          <div class="gi-tab" onclick="switchPeriod(0,this,'p0_6m')">6M</div>
+          <div class="gi-tab" onclick="switchPeriod(0,this,'p0_12m')">12M</div>
+        </div>
+
+        <!-- ── PERÍODO 1 MES ── -->
+        <div class="gi-panel active" id="p0_1m">
+          <!-- estabilidad y tendencia -->
+          <div class="gi-meta-row">
+            <div class="gi-meta-blk">
+              <span class="gi-meta-label">Ingresos</span>
+              <div class="gi-meta-pill-wrap">
+                <span class="gi-meta-pill-ctx">Tendencia</span>
+                <span class="gi-meta-pill neutral">Estable</span>
+              </div>
+            </div>
+            <div class="gi-meta-sep"></div>
+            <div class="gi-meta-blk">
+              <span class="gi-meta-label">Gastos</span>
+              <div class="gi-meta-pill-wrap">
+                <span class="gi-meta-pill-ctx">Tendencia</span>
+                <span class="gi-meta-pill neutral">Estable</span>
+              </div>
+            </div>
+          </div>
+          <!-- ingresos por fuente -->
+          <div class="gi-blk">
+            <div class="gi-blk-hdr"><span class="gi-blk-title">Principales fuentes de ingreso</span></div>
+            <div class="gi-row">
+              <span class="gi-row-label">Nómina</span>
+              <div class="gi-row-bar"><div class="gi-row-fill" style="width:100%;background:var(--green)"></div></div>
+              <span class="gi-row-val green">1.957 €</span>
+            </div>
+            <div class="gi-row">
+              <span class="gi-row-label">Pensión</span>
+              <div class="gi-row-bar"><div class="gi-row-fill" style="width:92%;background:var(--green)"></div></div>
+              <span class="gi-row-val green">1.803 €</span>
+            </div>
+            <div class="gi-row">
+              <span class="gi-row-label">Ingreso Bizum</span>
+              <div class="gi-row-bar"><div class="gi-row-fill" style="width:6%;background:var(--green)"></div></div>
+              <span class="gi-row-val green">120 €</span>
+            </div>
+          </div>
+          <div class="gi-sep"></div>
+          <!-- gastos prescindibles -->
+          <div class="gi-blk">
+            <div class="gi-blk-hdr"><span class="gi-blk-title">Gastos prescindibles destacados · Total 3.389 €</span></div>
+            <div class="gi-row">
+              <span class="gi-row-label">Gimnasios y clubs deportivos</span>
+              <div class="gi-row-bar"><div class="gi-row-fill" style="width:100%;background:var(--red)"></div></div>
+              <span class="gi-row-val red">−134,50 €</span>
+            </div>
+            <div class="gi-row">
+              <span class="gi-row-label">Bares y restaurantes</span>
+              <div class="gi-row-bar"><div class="gi-row-fill" style="width:58%;background:var(--red)"></div></div>
+              <span class="gi-row-val red">−77,45 €</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── PERÍODO 3 MESES ── -->
+        <div class="gi-panel" id="p0_3m">
+          <div class="gi-meta-row">
+            <div class="gi-meta-blk">
+              <span class="gi-meta-label">Ingresos</span>
+              <div class="gi-meta-pill-wrap">
+                <span class="gi-meta-pill-ctx">Tendencia</span>
+                <span class="gi-meta-pill good">Creciente</span>
+              </div>
+            </div>
+            <div class="gi-meta-sep"></div>
+            <div class="gi-meta-blk">
+              <span class="gi-meta-label">Gastos</span>
+              <div class="gi-meta-pill-wrap">
+                <span class="gi-meta-pill-ctx">Tendencia</span>
+                <span class="gi-meta-pill warn">Ascendente</span>
+              </div>
+            </div>
+          </div>
+          <div class="gi-blk">
+            <div class="gi-blk-hdr"><span class="gi-blk-title">Principales fuentes de ingreso</span></div>
+            <div class="gi-row">
+              <span class="gi-row-label">Nómina</span>
+              <div class="gi-row-bar"><div class="gi-row-fill" style="width:100%;background:var(--green)"></div></div>
+              <span class="gi-row-val green">5.971 €</span>
+            </div>
+            <div class="gi-row">
+              <span class="gi-row-label">Pensión</span>
+              <div class="gi-row-bar"><div class="gi-row-fill" style="width:45%;background:var(--green)"></div></div>
+              <span class="gi-row-val green">2.705 €</span>
+            </div>
+            <div class="gi-row">
+              <span class="gi-row-label">Ingreso Bizum</span>
+              <div class="gi-row-bar"><div class="gi-row-fill" style="width:2%;background:var(--green)"></div></div>
+              <span class="gi-row-val green">120 €</span>
+            </div>
+          </div>
+          <div class="gi-sep"></div>
+          <div class="gi-blk">
+            <div class="gi-blk-hdr"><span class="gi-blk-title">Gastos prescindibles destacados · Total 10.198 €</span></div>
+            <div class="gi-row">
+              <span class="gi-row-label">Bares y restaurantes</span>
+              <div class="gi-row-bar"><div class="gi-row-fill" style="width:100%;background:var(--red)"></div></div>
+              <span class="gi-row-val red">−343,66 €</span>
+            </div>
+            <div class="gi-row">
+              <span class="gi-row-label">Hoteles</span>
+              <div class="gi-row-bar"><div class="gi-row-fill" style="width:73%;background:var(--red)"></div></div>
+              <span class="gi-row-val red">−250,82 €</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── PERÍODO 6 MESES ── -->
+        <div class="gi-panel" id="p0_6m">
+          <div class="gi-meta-row">
+            <div class="gi-meta-blk">
+              <span class="gi-meta-label">Ingresos</span>
+              <div class="gi-meta-pill-wrap">
+                <span class="gi-meta-pill-ctx">Tendencia</span>
+                <span class="gi-meta-pill good">Creciente</span>
+              </div>
+            </div>
+            <div class="gi-meta-sep"></div>
+            <div class="gi-meta-blk">
+              <span class="gi-meta-label">Gastos</span>
+              <div class="gi-meta-pill-wrap">
+                <span class="gi-meta-pill-ctx">Tendencia</span>
+                <span class="gi-meta-pill warn">Ascendente</span>
+              </div>
+            </div>
+          </div>
+          <div class="gi-blk">
+            <div class="gi-blk-hdr"><span class="gi-blk-title">Principales fuentes de ingreso</span></div>
+            <div class="gi-row">
+              <span class="gi-row-label">Nómina</span>
+              <div class="gi-row-bar"><div class="gi-row-fill" style="width:100%;background:var(--green)"></div></div>
+              <span class="gi-row-val green">11.943 €</span>
+            </div>
+            <div class="gi-row">
+              <span class="gi-row-label">Pensión</span>
+              <div class="gi-row-bar"><div class="gi-row-fill" style="width:22%;background:var(--green)"></div></div>
+              <span class="gi-row-val green">2.705 €</span>
+            </div>
+            <div class="gi-row">
+              <span class="gi-row-label">Ingreso Bizum</span>
+              <div class="gi-row-bar"><div class="gi-row-fill" style="width:1%;background:var(--green)"></div></div>
+              <span class="gi-row-val green">120 €</span>
+            </div>
+          </div>
+          <div class="gi-sep"></div>
+          <div class="gi-blk">
+            <div class="gi-blk-hdr"><span class="gi-blk-title">Gastos prescindibles destacados · Total 20.466 €</span></div>
+            <div class="gi-row">
+              <span class="gi-row-label">Bares y restaurantes</span>
+              <div class="gi-row-bar"><div class="gi-row-fill" style="width:100%;background:var(--red)"></div></div>
+              <span class="gi-row-val red">−1.347,42 €</span>
+            </div>
+            <div class="gi-row">
+              <span class="gi-row-label">Servicios de viajes</span>
+              <div class="gi-row-bar"><div class="gi-row-fill" style="width:32%;background:var(--red)"></div></div>
+              <span class="gi-row-val red">−426,03 €</span>
+            </div>
+          </div>
+        </div>
+        <!-- ── PERÍODO 12 MESES ── -->
+        <div class="gi-panel" id="p0_12m">
+          <div class="gi-meta-row">
+            <div class="gi-meta-blk">
+              <span class="gi-meta-label">Ingresos</span>
+              <div class="gi-meta-pill-wrap">
+                <span class="gi-meta-pill-ctx">Tendencia</span>
+                <span class="gi-meta-pill good">Creciente</span>
+              </div>
+            </div>
+            <div class="gi-meta-sep"></div>
+            <div class="gi-meta-blk">
+              <span class="gi-meta-label">Gastos</span>
+              <div class="gi-meta-pill-wrap">
+                <span class="gi-meta-pill-ctx">Tendencia</span>
+                <span class="gi-meta-pill warn">Ascendente</span>
+              </div>
+            </div>
+          </div>
+          <div class="gi-blk">
+            <div class="gi-blk-hdr"><span class="gi-blk-title">Principales fuentes de ingreso</span></div>
+            <div class="gi-row">
+              <span class="gi-row-label">Nómina</span>
+              <div class="gi-row-bar"><div class="gi-row-fill" style="width:100%;background:var(--green)"></div></div>
+              <span class="gi-row-val green">11.943 €</span>
+            </div>
+            <div class="gi-row">
+              <span class="gi-row-label">Pensión</span>
+              <div class="gi-row-bar"><div class="gi-row-fill" style="width:45%;background:var(--green)"></div></div>
+              <span class="gi-row-val green">5.410 €</span>
+            </div>
+            <div class="gi-row">
+              <span class="gi-row-label">Ingreso Bizum</span>
+              <div class="gi-row-bar"><div class="gi-row-fill" style="width:1%;background:var(--green)"></div></div>
+              <span class="gi-row-val green">120 €</span>
+            </div>
+          </div>
+          <div class="gi-sep"></div>
+          <div class="gi-blk">
+            <div class="gi-blk-hdr"><span class="gi-blk-title">Gastos prescindibles destacados · Total 41.710 €</span></div>
+            <div class="gi-row">
+              <span class="gi-row-label">Bares y restaurantes</span>
+              <div class="gi-row-bar"><div class="gi-row-fill" style="width:100%;background:var(--red)"></div></div>
+              <span class="gi-row-val red">−2.385,51 €</span>
+            </div>
+            <div class="gi-row">
+              <span class="gi-row-label">Servicios de viajes</span>
+              <div class="gi-row-bar"><div class="gi-row-fill" style="width:94%;background:var(--red)"></div></div>
+              <span class="gi-row-val red">−2.249,25 €</span>
+            </div>
+          </div>
+          <div class="gi-sep"></div>
+          <div class="gi-alerts">
+            <div class="gi-alert media">
+              <span class="gi-alert-ico">🟠</span>
+              <span><b>Gastos en ocio elevados</b> · El gasto en bares y restaurantes y otros gastos de ocio es elevado de forma sostenida.</span>
+            </div>
+            <div class="gi-alert media">
+              <span class="gi-alert-ico">🟠</span>
+              <span><b>Picos en subcategorías prescindibles</b> · Se detectan meses con picos de gasto en viajes y ocio que podrían evitarse.</span>
+            </div>
+            <div class="gi-alert media" style="background:#E6F9EC;color:#04523B">
+              <span class="gi-alert-ico">🟢</span>
+              <span><b>Gastos obligatorios manejables</b> · Hipoteca y servicios básicos están bajo control. Situación estable.</span>
+            </div>
+          </div>
+        </div>
+
+      </div></div>
+    </div>
+
+    <div class="section-header"><h2 class="section-title">Tu <i>salud financiera</i></h2><span class="badge-ia">IA</span></div>
+    <div class="slider-outer"><div class="slider-track" id="t1">
+      <div class="detail-card">
+        <div class="dc-title">Colch&#243;n financiero <span class="q-icon">?</span></div>
+        <div class="dc-main-row"><span class="dc-main-label">Ahorro acumulado en el periodo</span><span class="dc-main-val">15.254 &#8364;</span></div>
+        <div class="dc-bar"><div class="dc-bar-fill" style="width:78%"></div></div>
+        <div class="dc-rows"><div class="dc-row">Ahorro promedio mensual &nbsp;<b>1.271 &#8364;</b></div><div class="dc-row green">Tendencia del colch&#243;n &nbsp;<b>En mejora</b></div></div>
+        <div class="dc-div"></div>
+        <div class="dc-eh"><span class="dc-el">Evoluci&#243;n</span><span class="dc-lnk">Ir a Colch&#243;n Financiero</span></div>
+        <div class="dc-et">Tu colch&#243;n muestra una tendencia positiva de mejora sostenida. Sigue reduciendo el gasto en ocio para acelerar el crecimiento.</div>
+        <div class="chart-wrap"><canvas id="g1a"></canvas></div>
+      </div>
+      <div class="detail-card">
+        <div class="dc-title">Balance mensual <span class="q-icon">?</span></div>
+        <div class="dc-main-row"><span class="dc-main-label">Sueles gastar</span><span class="dc-main-val">895 &#8364;</span></div>
+        <div class="dc-bar"><div class="dc-bar-fill" style="width:41%"></div></div>
+        <div class="dc-rows"><div class="dc-row">Sueles ingresar &nbsp;<b>2.167 &#8364;</b></div><div class="dc-row green">Al mes sueles ahorrar &nbsp;<b>1.271 &#8364;</b></div></div>
+        <div class="dc-div"></div>
+        <div class="dc-eh"><span class="dc-el">Evoluci&#243;n</span><span class="dc-lnk">Ir a Ingresos y gastos</span></div>
+        <div class="dc-et">Ingresos crecientes con media mensual de 2.167 &#8364;. El mayor gasto prescindible es bares y restaurantes, con picos en periodos de viajes.</div>
+        <div class="chart-wrap"><canvas id="g1b"></canvas></div>
+      </div>
+      <div class="detail-card">
+        <div class="dc-title">Gasto en ocio <span class="q-icon">?</span></div>
+        <div class="dc-main-row"><span class="dc-main-label">Gasto anual en bares y restaurantes</span><span class="dc-main-val">2.386 &#8364;</span></div>
+        <div class="dc-bar"><div class="dc-bar-fill red" style="width:65%"></div></div>
+        <div class="dc-rows"><div class="dc-row amber">Tendencia: ascendente en los &#250;ltimos 12 meses</div><div class="dc-row">Viajes y servicios asociados &nbsp;<b>2.249 &#8364;</b></div></div>
+        <div class="dc-div"></div>
+        <div class="dc-eh"><span class="dc-el">Evoluci&#243;n</span><span class="dc-lnk">Ir a Gastos prescindibles</span></div>
+        <div class="dc-et">Reducir el gasto en bares y restaurantes podr&#237;a suponer un ahorro adicional de hasta 199 &#8364;/mes.</div>
+        <div class="chart-wrap"><canvas id="g1c"></canvas></div>
+      </div>
+    </div>
+    <div class="card-nav"><span class="cnl" id="l1">1 de 3</span><div class="cna"><div class="nb off" id="p1" onclick="nav(1,-1)">&#8249;</div><div class="nb" id="n1" onclick="nav(1,1)">&#8250;</div></div></div>
+    </div>
+  </div>
+
+  <!-- ══════════ CLIENTE 2: ES··623 ══════════ -->
+  <div id="c2" class="client-data">
+    <div class="hero hero-neg">
+      <div class="hero-badge">COACH IA</div>
+      <div class="hero-titulo">Hay varios puntos por donde podemos <i>empezar a trabajar</i></div>
+      <div class="hero-subtitulo">Tu colch&#243;n a&#250;n no llega al objetivo y tu deuda est&#225; por encima de lo recomendado.</div>
+    </div>
+    <div class="ai-accordion">
+      <div class="ai-header" onclick="tog('ab2','ac2')">
+        <div class="ai-header-left"><span class="badge-ia">IA</span><div><div class="ai-label">Explicabilidad con IA</div><div class="ai-sublabel">An&#225;lisis detallado de tu situaci&#243;n</div></div></div>
+        <svg class="ai-chev" id="ac2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="ai-body" id="ab2"><div class="ai-inner">
+        <div class="ai-sec"><div class="ai-sl">Diagn&#243;stico</div><div class="ai-res">Tus gastos en abril 2026 han sido de 4.002 &#8364;, con gastos prescindibles en Bares y restaurantes (210 &#8364;) y Servicios digitales (62 &#8364;). Tu colch&#243;n actual de 5.289 &#8364; est&#225; muy por debajo del objetivo de 15.264 &#8364;. Adem&#225;s, tu esfuerzo en deuda de 723 &#8364; supera dos quintas partes de tus ingresos recurrentes.</div></div>
+        <div class="ai-sec"><div class="ai-sl">Puntos fuertes</div><div class="ai-items">
+          <div class="ai-item"><div class="dot g"></div><span>Ingresos recurrentes estables con una mediana de 3.168 &#8364; en los &#250;ltimos 12 meses.</span></div>
+          <div class="ai-item"><div class="dot g"></div><span>El colch&#243;n ha crecido hasta 5.289 &#8364; en abril 2026, la cifra m&#225;s alta del a&#241;o.</span></div>
+        </div></div>
+        <div class="ai-sec"><div class="ai-sl">&#193;reas de mejora</div><div class="ai-items">
+          <div class="ai-item"><div class="dot r"></div><span>Tu esfuerzo en deuda de 723 &#8364; supera dos quintas partes de tus ingresos recurrentes.</span></div>
+          <div class="ai-item"><div class="dot a"></div><span>El colch&#243;n actual de 5.289 &#8364; est&#225; muy por debajo del objetivo de 15.264 &#8364;.</span></div>
+          <div class="ai-item"><div class="dot a"></div><span>Los gastos de abril han subido a 4.002 &#8364;, con un pico en Ocio y Servicios digitales.</span></div>
+        </div></div>
+        <div class="ai-sec"><div class="ai-sl">Recomendaci&#243;n</div><div class="ai-rec">Reduce los gastos en Bares y restaurantes (210 &#8364;) y Servicios digitales (62 &#8364;) para liberar recursos hacia el colch&#243;n y reducir la deuda.</div></div>
+      </div></div>
+    </div>
+
+    <!-- EVAL CARD 2 — datos reales del evaluador -->
+    <div class="eval-card">
+      <div class="eval-topbar ap"></div>
+      <div class="eval-hdr" onclick="togEval('ev2','ec2')">
+        <div class="eval-hdr-l">
+          <span class="badge-ev ap">&#10003; Aprobado</span>
+          <div><div class="eval-title">Evaluaci&#243;n del diagn&#243;stico</div><div class="eval-sub">LLM evaluador &middot; Nova Pro</div></div>
+        </div>
+        <div class="eval-right">
+          <div><span class="eval-sn sn-ap">3.9</span><span class="eval-sm">/5</span></div>
+          <svg class="eval-chev" id="ec2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+      <div class="eval-bdy" id="ev2"><div class="eval-inn">
+        <div class="eval-summ">&#171;El diagn&#243;stico identifica correctamente las tres &#225;reas cr&#237;ticas. La precisi&#243;n en colch&#243;n y deuda es alta. Pendiente verificaci&#243;n de la tendencia temporal del colch&#243;n con las series hist&#243;ricas completas.&#187;</div>
+        <div class="radar-wrap"><canvas id="r2"></canvas></div>
+        <div class="ev-blk">
+          <div class="ev-blk-hdr"><span class="ev-blk-nm">Calidad de respuesta</span><span class="ev-blk-avg">3.8 / 5</span></div>
+          <div class="ev-kpi"><span class="ev-kpi-nm">Precisi&#243;n</span><div class="ev-kpi-bar"><div class="ev-kpi-fill kf3" style="width:60%"></div></div><span class="ev-kpi-sc">3</span></div>
+          <div class="ev-kpi"><span class="ev-kpi-nm">Relevancia</span><div class="ev-kpi-bar"><div class="ev-kpi-fill kf4" style="width:80%"></div></div><span class="ev-kpi-sc">4</span></div>
+          <div class="ev-kpi"><span class="ev-kpi-nm">Completitud</span><div class="ev-kpi-bar"><div class="ev-kpi-fill kf4" style="width:80%"></div></div><span class="ev-kpi-sc">4</span></div>
+          <div class="ev-kpi"><span class="ev-kpi-nm">Coherencia</span><div class="ev-kpi-bar"><div class="ev-kpi-fill kf4" style="width:80%"></div></div><span class="ev-kpi-sc">4</span></div>
+          <div class="ev-kpi"><span class="ev-kpi-nm">Groundedness</span><div class="ev-kpi-bar"><div class="ev-kpi-fill kf4" style="width:80%"></div></div><span class="ev-kpi-sc">4</span></div>
+        </div>
+        <div class="ev-sep"></div>
+        <div class="ev-blk">
+          <div class="ev-blk-hdr"><span class="ev-blk-nm">Riesgo y control</span><span class="ev-blk-avg">4.0 / 5</span></div>
+          <div class="ev-kpi"><span class="ev-kpi-nm">Alucinaci&#243;n</span><div class="ev-kpi-bar"><div class="ev-kpi-fill kf5" style="width:100%"></div></div><span class="ev-kpi-sc">5</span></div>
+          <div class="ev-kpi"><span class="ev-kpi-nm">Restricciones</span><div class="ev-kpi-bar"><div class="ev-kpi-fill kf3" style="width:60%"></div></div><span class="ev-kpi-sc">3</span><span class="ev-warn">&#9888; [1]</span></div>
+          <div class="ev-kpi"><span class="ev-kpi-nm">Tono y estilo</span><div class="ev-kpi-bar"><div class="ev-kpi-fill kf4" style="width:80%"></div></div><span class="ev-kpi-sc">4</span></div>
+        </div>
+        <div class="ev-sep"></div>
+        <div class="ev-blk">
+          <div class="ev-blk-hdr"><span class="ev-blk-nm">Impacto de negocio</span><span class="ev-blk-avg">4.0 / 5</span></div>
+          <div class="ev-kpi"><span class="ev-kpi-nm">Utilidad</span><div class="ev-kpi-bar"><div class="ev-kpi-fill kf4" style="width:80%"></div></div><span class="ev-kpi-sc">4</span></div>
+          <div class="ev-kpi"><span class="ev-kpi-nm">Adecuaci&#243;n funcional</span><div class="ev-kpi-bar"><div class="ev-kpi-fill kf4" style="width:80%"></div></div><span class="ev-kpi-sc">4</span></div>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="section-header"><h2 class="section-title">Tu <i>salud financiera</i></h2><span class="badge-ia">IA</span></div>
+    <div class="slider-outer"><div class="slider-track" id="t2">
+      <div class="detail-card">
+        <div class="dc-title">Colch&#243;n financiero <span class="q-icon">?</span></div>
+        <div class="dc-main-row"><span class="dc-main-label">Tienes 2,1 meses de colch&#243;n</span><span class="dc-main-val">5.289 &#8364;</span></div>
+        <div class="dc-bar"><div class="dc-bar-fill red" style="width:35%"></div></div>
+        <div class="dc-rows"><div class="dc-row">Lo ideal es tener 6 meses &nbsp;<b>15.264 &#8364;</b></div><div class="dc-row red">Te faltan &nbsp;<b>9.975 &#8364;</b> para el objetivo</div></div>
+        <div class="dc-div"></div>
+        <div class="dc-eh"><span class="dc-el">Evoluci&#243;n</span><span class="dc-lnk">Ir a Colch&#243;n Financiero</span></div>
+        <div class="dc-et">El colch&#243;n ha crecido desde 0 &#8364; en septiembre 2025 hasta 5.289 &#8364; en abril 2026.</div>
+        <div class="chart-wrap"><canvas id="g2a"></canvas></div>
+      </div>
+      <div class="detail-card">
+        <div class="dc-title">Balance mensual <span class="q-icon">?</span></div>
+        <div class="dc-main-row"><span class="dc-main-label">Sueles gastar</span><span class="dc-main-val">3.624 &#8364;</span></div>
+        <div class="dc-bar"><div class="dc-bar-fill red" style="width:100%"></div></div>
+        <div class="dc-rows"><div class="dc-row">Sueles ingresar &nbsp;<b>3.168 &#8364;</b></div><div class="dc-row red">Gasto habitual supera ingresos en &nbsp;<b>456 &#8364;</b></div></div>
+        <div class="dc-div"></div>
+        <div class="dc-eh"><span class="dc-el">Evoluci&#243;n</span><span class="dc-lnk">Ir a Ingresos y gastos</span></div>
+        <div class="dc-et">Noviembre 2025 fue el mes de mayor gasto con 5.321 &#8364;. Abril 2026 sube a 4.002 &#8364;.</div>
+        <div class="chart-wrap"><canvas id="g2b"></canvas></div>
+      </div>
+      <div class="detail-card">
+        <div class="dc-title">Deuda mensual <span class="q-icon">?</span></div>
+        <div class="dc-main-row"><span class="dc-main-label">Sueles pagar</span><span class="dc-main-val">722,70 &#8364;</span></div>
+        <div class="dc-bar"><div class="dc-bar-fill red" style="width:73%"></div></div>
+        <div class="dc-rows"><div class="dc-row">Tu m&#225;ximo recomendado es de &nbsp;<b>1.267 &#8364;</b></div><div class="dc-row amber">Deuda por encima de dos quintas partes de los ingresos</div></div>
+        <div class="dc-div"></div>
+        <div class="dc-eh"><span class="dc-el">Evoluci&#243;n</span><span class="dc-lnk">Ir a Deuda</span></div>
+        <div class="dc-et">La deuda ha bajado gradualmente desde 1.095 &#8364; en agosto 2025 hasta 803 &#8364; en abril 2026.</div>
+        <div class="chart-wrap"><canvas id="g2c"></canvas></div>
+      </div>
+    </div>
+    <div class="card-nav"><span class="cnl" id="l2">1 de 3</span><div class="cna"><div class="nb off" id="p2" onclick="nav(2,-1)">&#8249;</div><div class="nb" id="n2" onclick="nav(2,1)">&#8250;</div></div></div>
+    </div>
+  </div>
+
+  <!-- ══════════ CLIENTE 3: ES··793 ══════════ -->
+  <div id="c3" class="client-data">
+    <div class="hero hero-neg">
+      <div class="hero-badge">COACH IA</div>
+      <div class="hero-titulo">Vamos a darle la vuelta a tu <i>situaci&#243;n juntos</i></div>
+      <div class="hero-subtitulo">Hay margen para reforzar tu ahorro y optimizar tus finanzas.</div>
+    </div>
+    <div class="ai-accordion">
+      <div class="ai-header" onclick="tog('ab3','ac3')">
+        <div class="ai-header-left"><span class="badge-ia">IA</span><div><div class="ai-label">Explicabilidad con IA</div><div class="ai-sublabel">An&#225;lisis detallado de tu situaci&#243;n</div></div></div>
+        <svg class="ai-chev" id="ac3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+      </div>
+      <div class="ai-body" id="ab3"><div class="ai-inner">
+        <div class="ai-sec"><div class="ai-sl">Diagn&#243;stico</div><div class="ai-res">No tienes colch&#243;n financiero actualmente y tus gastos han superado tus ingresos en varios meses. Los ingresos recurrentes han ido creciendo desde finales de 2025, lo que abre una oportunidad para empezar a ahorrar. Tu deuda mensual actual es de 382 &#8364;.</div></div>
+        <div class="ai-sec"><div class="ai-sl">Puntos fuertes</div><div class="ai-items">
+          <div class="ai-item"><div class="dot g"></div><span>Tus ingresos recurrentes han crecido de forma sostenida desde diciembre 2025, llegando a 649 &#8364; en abril 2026.</span></div>
+          <div class="ai-item"><div class="dot g"></div><span>Los gastos obligatorios son relativamente bajos, lo que da margen para redirigir dinero al ahorro.</span></div>
+        </div></div>
+        <div class="ai-sec"><div class="ai-sl">&#193;reas de mejora</div><div class="ai-items">
+          <div class="ai-item"><div class="dot r"></div><span>No tienes colch&#243;n financiero. El objetivo recomendado es de 8.159 &#8364;.</span></div>
+          <div class="ai-item"><div class="dot r"></div><span>En varios meses los gastos han superado los ingresos, creando un desbalance estructural.</span></div>
+          <div class="ai-item"><div class="dot a"></div><span>La deuda actual de 382 &#8364; al mes merece atenci&#243;n para evaluar si se puede reducir o renegociar.</span></div>
+        </div></div>
+        <div class="ai-sec"><div class="ai-sl">Recomendaci&#243;n</div><div class="ai-rec">Empieza por establecer un plan de ahorro aprovechando el crecimiento de tus ingresos. Reduce gastos prescindibles para liberar recursos hacia el colch&#243;n objetivo de 8.159 &#8364;.</div></div>
+      </div></div>
+    </div>
+
+    <!-- EVAL CARD 3 — REVISAR -->
+    <div class="eval-card">
+      <div class="eval-topbar rev"></div>
+      <div class="eval-hdr" onclick="togEval('ev3','ec3')">
+        <div class="eval-hdr-l">
+          <span class="badge-ev rev">&#9888; Revisar</span>
+          <div><div class="eval-title">Evaluaci&#243;n del diagn&#243;stico</div><div class="eval-sub">LLM evaluador &middot; Nova Pro</div></div>
+        </div>
+        <div class="eval-right">
+          <div><span class="eval-sn sn-rev">3.2</span><span class="eval-sm">/5</span></div>
+          <svg class="eval-chev" id="ec3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+      </div>
+      <div class="eval-bdy" id="ev3"><div class="eval-inn">
+        <div class="eval-summ">&#171;El diagn&#243;stico identifica correctamente el colch&#243;n en 0&#8364; y el desbalance. La afirmaci&#243;n sobre ingresos &#171;creciendo de forma sostenida&#187; no est&#225; suficientemente respaldada por las series hist&#243;ricas, que muestran actividad m&#237;nima en los &#250;ltimos meses.&#187;</div>
+        <div class="radar-wrap"><canvas id="r3"></canvas></div>
+        <div class="ev-blk">
+          <div class="ev-blk-hdr"><span class="ev-blk-nm">Calidad de respuesta</span><span class="ev-blk-avg">3.0 / 5</span></div>
+          <div class="ev-kpi"><span class="ev-kpi-nm">Precisi&#243;n</span><div class="ev-kpi-bar"><div class="ev-kpi-fill kf2" style="width:40%"></div></div><span class="ev-kpi-sc">2</span></div>
+          <div class="ev-kpi"><span class="ev-kpi-nm">Relevancia</span><div class="ev-kpi-bar"><div class="ev-kpi-fill kf4" style="width:80%"></div></div><span class="ev-kpi-sc">4</span></div>
+          <div class="ev-kpi"><span class="ev-kpi-nm">Completitud</span><div class="ev-kpi-bar"><div class="ev-kpi-fill kf4" style="width:80%"></div></div><span class="ev-kpi-sc">4</span></div>
+          <div class="ev-kpi"><span class="ev-kpi-nm">Coherencia</span><div class="ev-kpi-bar"><div class="ev-kpi-fill kf3" style="width:60%"></div></div><span class="ev-kpi-sc">3</span></div>
+          <div class="ev-kpi"><span class="ev-kpi-nm">Groundedness</span><div class="ev-kpi-bar"><div class="ev-kpi-fill kf2" style="width:40%"></div></div><span class="ev-kpi-sc">2</span></div>
+        </div>
+        <div class="ev-sep"></div>
+        <div class="ev-blk">
+          <div class="ev-blk-hdr"><span class="ev-blk-nm">Riesgo y control</span><span class="ev-blk-avg">3.7 / 5</span></div>
+          <div class="ev-kpi"><span class="ev-kpi-nm">Alucinaci&#243;n</span><div class="ev-kpi-bar"><div class="ev-kpi-fill kf3" style="width:60%"></div></div><span class="ev-kpi-sc">3</span></div>
+          <div class="ev-kpi"><span class="ev-kpi-nm">Restricciones</span><div class="ev-kpi-bar"><div class="ev-kpi-fill kf4" style="width:80%"></div></div><span class="ev-kpi-sc">4</span></div>
+          <div class="ev-kpi"><span class="ev-kpi-nm">Tono y estilo</span><div class="ev-kpi-bar"><div class="ev-kpi-fill kf4" style="width:80%"></div></div><span class="ev-kpi-sc">4</span></div>
+        </div>
+        <div class="ev-sep"></div>
+        <div class="ev-blk">
+          <div class="ev-blk-hdr"><span class="ev-blk-nm">Impacto de negocio</span><span class="ev-blk-avg">3.0 / 5</span></div>
+          <div class="ev-kpi"><span class="ev-kpi-nm">Utilidad</span><div class="ev-kpi-bar"><div class="ev-kpi-fill kf3" style="width:60%"></div></div><span class="ev-kpi-sc">3</span></div>
+          <div class="ev-kpi"><span class="ev-kpi-nm">Adecuaci&#243;n funcional</span><div class="ev-kpi-bar"><div class="ev-kpi-fill kf3" style="width:60%"></div></div><span class="ev-kpi-sc">3</span></div>
+        </div>
+      </div></div>
+    </div>
+
+    <div class="section-header"><h2 class="section-title">Tu <i>salud financiera</i></h2><span class="badge-ia">IA</span></div>
+    <div class="slider-outer"><div class="slider-track" id="t3">
+      <div class="detail-card">
+        <div class="dc-title">Colch&#243;n financiero <span class="q-icon">?</span></div>
+        <div class="dc-main-row"><span class="dc-main-label">No tienes colch&#243;n financiero</span><span class="dc-main-val">0 &#8364;</span></div>
+        <div class="dc-bar"><div class="dc-bar-fill red" style="width:0%"></div></div>
+        <div class="dc-rows"><div class="dc-row">Lo ideal es tener 6 meses &nbsp;<b>8.159 &#8364;</b></div><div class="dc-row red">Te faltan &nbsp;<b>8.159 &#8364;</b> para el objetivo</div></div>
+        <div class="dc-div"></div>
+        <div class="dc-eh"><span class="dc-el">Evoluci&#243;n</span><span class="dc-lnk">Ir a Colch&#243;n Financiero</span></div>
+        <div class="dc-et">El colch&#243;n ha sido 0 &#8364; durante los &#250;ltimos 12 meses. El objetivo crece a medida que aumentan los gastos.</div>
+        <div class="chart-wrap"><canvas id="g3a"></canvas></div>
+      </div>
+      <div class="detail-card">
+        <div class="dc-title">Balance mensual <span class="q-icon">?</span></div>
+        <div class="dc-main-row"><span class="dc-main-label">Sueles gastar</span><span class="dc-main-val">1.002 &#8364;</span></div>
+        <div class="dc-bar"><div class="dc-bar-fill red" style="width:100%"></div></div>
+        <div class="dc-rows"><div class="dc-row">Sueles ingresar &nbsp;<b>755 &#8364;</b></div><div class="dc-row red">Gasto habitual supera ingresos en &nbsp;<b>247 &#8364;</b></div></div>
+        <div class="dc-div"></div>
+        <div class="dc-eh"><span class="dc-el">Evoluci&#243;n</span><span class="dc-lnk">Ir a Ingresos y gastos</span></div>
+        <div class="dc-et">Los gastos m&#225;s altos fueron marzo 2026 (1.594 &#8364;). Los ingresos crecen de forma sostenida desde diciembre 2025.</div>
+        <div class="chart-wrap"><canvas id="g3b"></canvas></div>
+      </div>
+      <div class="detail-card">
+        <div class="dc-title">Deuda mensual <span class="q-icon">?</span></div>
+        <div class="dc-main-row"><span class="dc-main-label">Sueles pagar</span><span class="dc-main-val">382,38 &#8364;</span></div>
+        <div class="dc-bar"><div class="dc-bar-fill amber" style="width:80%;background:var(--amber)"></div></div>
+        <div class="dc-rows"><div class="dc-row">Tu m&#225;ximo recomendado es de &nbsp;<b>302 &#8364;</b></div><div class="dc-row red">Deuda supera el m&#225;ximo recomendado</div></div>
+        <div class="dc-div"></div>
+        <div class="dc-eh"><span class="dc-el">Evoluci&#243;n</span><span class="dc-lnk">Ir a Deuda</span></div>
+        <div class="dc-et">La deuda ha oscilado entre 146 &#8364; y 628 &#8364;. Los &#250;ltimos meses se mantiene cerca del m&#225;ximo.</div>
+        <div class="chart-wrap"><canvas id="g3c"></canvas></div>
+      </div>
+    </div>
+    <div class="card-nav"><span class="cnl" id="l3">1 de 3</span><div class="cna"><div class="nb off" id="p3" onclick="nav(3,-1)">&#8249;</div><div class="nb" id="n3" onclick="nav(3,1)">&#8250;</div></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="bottom-nav">
+  <div class="bnav"><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg><span>Inicio</span></div>
+  <div class="bnav active"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg><span>Salud Fin.</span></div>
+  <div class="bnav"><svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg><span>Contratar</span></div>
+  <div class="bnav"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><span>Buz&#243;n</span></div>
+  <div class="bnav"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg><span>Gestor</span></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+<script>
+/* ── toggle gastos e ingresos ─────────────────────────────────────────── */
+function togGI(b,c){
+  var bd=document.getElementById(b),cv=document.getElementById(c),o=bd.classList.contains('open');
+  bd.classList.toggle('open',!o);
+  cv.classList.toggle('open',!o);
+}
+function switchPeriod(clientIdx, tabEl, panelId){
+  // deactivate all tabs in this client's gi-tabs
+  var tabs=tabEl.parentElement.querySelectorAll('.gi-tab');
+  tabs.forEach(function(t){t.classList.remove('active')});
+  tabEl.classList.add('active');
+  // deactivate all panels
+  var panels=document.getElementById('gi'+clientIdx).querySelectorAll('.gi-panel');
+  panels.forEach(function(p){p.classList.remove('active')});
+  document.getElementById(panelId).classList.add('active');
+}
+</script>
+<script>
+/* ── navegación existente ─────────────────────────────────────────────── */
+var idx={0:0,1:0,2:0,3:0};
+function tog(b,c){var bd=document.getElementById(b),cv=document.getElementById(c),o=bd.classList.contains('open');bd.classList.toggle('open',!o);cv.classList.toggle('open',!o)}
+function sc(i){document.querySelectorAll('.client-btn').forEach(function(b,j){b.classList.toggle('active',j===i)});document.querySelectorAll('.client-data').forEach(function(d,j){d.classList.toggle('active',j===i)})}
+function nav(c,d){var tr=document.getElementById('t'+c),n=Math.max(0,Math.min(2,idx[c]+d));if(n===idx[c])return;idx[c]=n;tr.scrollTo({left:n*tr.offsetWidth,behavior:'smooth'});document.getElementById('l'+c).textContent=(n+1)+' de 3';document.getElementById('p'+c).classList.toggle('off',n===0);document.getElementById('n'+c).classList.toggle('off',n===2)}
+
+/* ── toggle evaluación ────────────────────────────────────────────────── */
+function togEval(b,c){
+  var bd=document.getElementById(b),cv=document.getElementById(c),o=bd.classList.contains('open');
+  bd.classList.toggle('open',!o);
+  cv.classList.toggle('open',!o);
+}
+
+/* ── datos para gráficos de línea ────────────────────────────────────── */
+var L13=['Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic','Ene','Feb','Mar','Abr'];
+var L9=['Ago','Sep','Oct','Nov','Dic','Ene','Feb','Mar','Abr'];
+var S='rgb(133,200,255)',B='rgb(0,19,145)',R='rgb(208,2,27)',A='rgb(232,119,34)';
+function mk(id,labels,data,color,fill){
+  var ctx=document.getElementById(id);if(!ctx)return;
+  var ds={data:data,borderColor:color,borderWidth:2,tension:0.4,pointRadius:0,fill:fill};
+  if(fill)ds.backgroundColor=color.replace('rgb(','rgba(').replace(')',',0.12)');
+  new Chart(ctx,{type:'line',data:{labels:labels,datasets:[ds]},options:{responsive:true,maintainAspectRatio:false,animation:false,plugins:{legend:{display:false},tooltip:{enabled:false}},scales:{x:{grid:{display:false},ticks:{font:{size:10,family:'Lato'},color:'#46536D',maxRotation:0,autoSkip:true,maxTicksLimit:7}},y:{display:false}}}});
+}
+
+/* ── radar evaluación ─────────────────────────────────────────────────── */
+var KPI_LABELS=['Precisión','Relevancia','Completitud','Coherencia','Groundedness','Alucinación','Restricciones','Tono','Utilidad','Adecuación'];
+function mkRadar(id,data,color){
+  var ctx=document.getElementById(id);if(!ctx)return;
+  new Chart(ctx,{
+    type:'radar',
+    data:{
+      labels:KPI_LABELS,
+      datasets:[{
+        data:data,
+        backgroundColor:color.replace('rgb(','rgba(').replace(')',',0.12)'),
+        borderColor:color,
+        borderWidth:1.5,
+        pointRadius:3,
+        pointBackgroundColor:color,
+        pointBorderColor:'#fff',
+        pointBorderWidth:1
+      }]
+    },
+    options:{
+      responsive:true,maintainAspectRatio:false,animation:false,
+      scales:{r:{
+        min:0,max:5,
+        ticks:{stepSize:1,display:false},
+        pointLabels:{font:{size:9,family:'Lato'},color:'#46536D'},
+        grid:{color:'#E2E6EA'},
+        angleLines:{color:'#E2E6EA'}
+      }},
+      plugins:{legend:{display:false},tooltip:{
+        callbacks:{label:function(ctx){return ' '+ctx.raw+'/5';}},
+        bodyFont:{family:'Lato',size:11}
+      }}
+    }
+  });
+}
+
+window.addEventListener('load',function(){
+  /* gráficos de línea originales */
+  mk('g0a',L13,[81122,76506,91328,81246,100566,122169,119501,91501,87447,87636,90141,95009,108139],S,true);
+  mk('g0b',L13,[18369,16613,24291,23962,22807,7602,53027,8878,7786,6258,5692,5751,7016],R,false);
+  mk('g0c',L9,[30,16,492,2795,6557,3124,2819,1310,788],B,false);
+  mk('g1a',L13,[38694,36231,35859,33393,32930,32613,31156,31330,30516,29364,28468,28319,38130],S,true);
+  mk('g1b',L13,[1553,1535,2484,1847,2933,2307,3328,1678,1607,1708,1959,1989,1638],B,false);
+  mk('g1c',L9,[515,515,515,515,515,515,515,515,515],B,false);
+  mk('g2a',L13,[119,368,77,360,169,0,278,1549,1138,1886,1188,3140,5289],S,true);
+  mk('g2b',L13,[3290,3957,2929,4072,4960,2720,3181,5321,4778,3278,3474,3773,4002],R,false);
+  mk('g2c',L9,[1095,985,1093,909,883,864,853,821,803],A,false);
+  mk('g3a',L13,[0,0,0,0,0,0,0,0,0,0,0,0,0],R,false);
+  mk('g3b',L13,[0,0,40,334,0,7,1118,778,760,30,909,1594,991],R,false);
+  mk('g3c',L9,[421,146,529,606,608,611,508,625,628],A,false);
+
+  /* radares de evaluación: [p, r, c, coh, g, al, rest, ton, ut, ad] */
+  mkRadar('r0',[5,5,5,4,5, 5,4,4, 4,5],'rgb(4,138,36)');
+  mkRadar('r1',[4,4,5,4,4, 5,4,4, 4,4],'rgb(4,138,36)');
+  mkRadar('r2',[3,4,4,4,4, 5,3,4, 4,4],'rgb(0,19,145)');
+  mkRadar('r3',[2,4,4,3,2, 3,4,4, 3,3],'rgb(232,119,34)');
+});
+</script>
