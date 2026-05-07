@@ -26,7 +26,7 @@ El objetivo es transformar datos transaccionales en una experiencia comprensible
 
 ## Vista previa
 
-> 🔗 **[Ver demo en vivo](https://TU_USUARIO.github.io/TU_REPOSITORIO)**
+> 🔗 **[Ver demo en vivo](https://tuusuario.github.io/financial-health-ai-demo)**
 
 ---
 
@@ -34,18 +34,9 @@ El objetivo es transformar datos transaccionales en una experiencia comprensible
 
 ```
 /
-├── index.html       # Demo principal (renombrar desde demo_evaluador_v2.html)
+├── index.html 
 └── README.md
 ```
-
----
-
-## Cómo desplegarlo en GitHub Pages
-
-1. Sube los archivos al repositorio
-2. Ve a **Settings → Pages**
-3. En *Branch*, selecciona `main` y carpeta `/ (root)`
-4. Guarda — en unos segundos tendrás la URL pública
 
 ---
 
