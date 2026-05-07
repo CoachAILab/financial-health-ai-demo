@@ -26,7 +26,7 @@ El objetivo es transformar datos transaccionales en una experiencia comprensible
 
 ## Vista previa
 
-> 🔗 **[Ver demo en vivo](https://tuusuario.github.io/financial-health-ai-demo)**
+> 🔗 **[Ver demo en vivo](https://CarlosMSProjects.github.io/financial-health-ai-demo)**
 
 ---
 
