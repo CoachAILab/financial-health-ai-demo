@@ -91,11 +91,45 @@ body { padding-top: 44px; }
 #top-nav {
   position: fixed; top: 0; left: 0; right: 0; height: 44px;
   background: #042C53;
-  display: flex; align-items: center; justify-content: flex-end;
+  display: flex; align-items: center; justify-content: space-between;
   padding: 0 20px;
   z-index: 9999;
   box-shadow: 0 1px 0 rgba(255,255,255,0.08), 0 2px 8px rgba(0,0,0,0.18);
 }
+
+/* ── Schema table pills ───────────────────── */
+#nav-schema { display: flex; align-items: center; gap: 5px; flex: 1; min-width: 0; padding-right: 16px; }
+.schema-badge { color: rgba(255,255,255,0.42); font-size: 9px; font-weight: 700; letter-spacing: .7px; text-transform: uppercase; margin-right: 3px; white-space: nowrap; flex-shrink: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+.tbl-drop { position: relative; flex-shrink: 0; }
+.tbl-trigger {
+  display: flex; align-items: center; gap: 5px;
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.85);
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 5px;
+  padding: 3px 8px 3px 7px;
+  font-size: 10px; font-weight: 600;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  cursor: pointer; transition: background .15s; white-space: nowrap; user-select: none;
+}
+.tbl-trigger:hover, .tbl-drop.open .tbl-trigger { background: rgba(255,255,255,0.18); color: #fff; }
+.tbl-trigger .t-arrow { font-size: 7px; opacity: .55; transition: transform .2s; display: inline-block; margin-left: 1px; }
+.tbl-drop.open .t-arrow { transform: rotate(180deg); }
+.tbl-menu {
+  display: none; position: absolute; top: calc(100% + 7px); left: 0;
+  min-width: 280px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 28px rgba(4,44,83,.22), 0 0 0 1px rgba(4,44,83,.09);
+  z-index: 10001; padding: 8px 0;
+}
+.tbl-drop.open .tbl-menu { display: block; animation: ddFade .15s ease; }
+.tbl-menu-head { padding: 6px 13px 7px; font-size: 9px; font-weight: 700; letter-spacing: .7px; text-transform: uppercase; color: #7A8EAA; border-bottom: 1px solid #EEF3F8; margin-bottom: 3px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+.tbl-var { display: flex; align-items: center; gap: 8px; padding: 3px 13px;
+  font-size: 10.5px; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  color: #1D3A6B; line-height: 1.6;
+}
+.tbl-var::before { content: ''; width: 5px; height: 5px; min-width: 5px; background: #2DCCCD; border-radius: 50%; }
 
 .nav-dropdown { position: relative; }
 
@@ -1503,6 +1537,9 @@ footer {
 <body>
 
 <nav id="top-nav">
+  <div id="nav-schema">
+    <span class="schema-badge">Tablas:</span>
+  </div>
   <div class="nav-dropdown" id="navDropdown">
     <div class="nav-trigger" id="navTrigger" onclick="toggleNav(event)">
       <span id="navIcon">🖥️</span>
@@ -5375,12 +5412,68 @@ function filterProd(btn) {
 }
 </script>
 <script>
+/* ── Schema data for the 3 use cases ──────────────────────────────── */
+var SCHEMA = [
+  /* 0 – Mensajes */
+  [
+    { name: 't_kpfm_movements_hist', vars: ['g_customer_id','gf_shown_taxo_group_name','gf_shown_taxo_category_name','gf_shown_taxo_subcategory_name','gf_movement_amount','gf_concept_long_desc','gf_cutoff_date','gf_year_month_date_id'] },
+    { name: 't_katt_global_attributes', vars: ['g_customer_id','gf_acct_curr_tl_bal_amount','gf_ca_curr_tl_bal_amount','gf_glac_curr_tl_bal_amount','gf_ifd_curr_tl_bal_amount','gf_secur_curr_tl_bal_amount','gf_pp_curr_tl_bal_amount','gf_curr_cnsl_bal_tl_amount','gf_mtg_curr_tl_bal_amount','gf_crcd_curr_tl_bal_amount','gf_1m_rl_fin_cushn_mth_number','gf_rl_financial_cushion_amount','gf_1m_total_incm_amount','gf_1m_tl_cst_amount','gf_cust_mortgages_number','gf_cust_cnsl_number','gf_cust_ca_number','gf_cust_credit_cards_number'] },
+    { name: 't_knwd_customer_proposals', vars: ['g_customer_id','gf_cutoff_date','gf_fin_coach_prop_cat_id'] },
+    { name: 't_khr1_messages', vars: ['g_customer_id','gf_cutoff_date','gf_m_zento_type','gf_m_amount_ars','gf_m_values_date_ars','gf_m_number_ars','gf_m_id_ars','gf_m_per_ars'] }
+  ],
+  /* 1 – Diagnóstico financiero */
+  [
+    { name: 't_katt_global_attributes', vars: ['gf_medn_tl_cost_12m_amount','gf_1m_tl_cst_amount','gf_1m_tl_mdty_cst_amount','gf_12m_tl_minc_medn_amount','gf_12m_ptntl_fin_cushn_amount','gf_1m_rl_fin_cushion_amount','gf_1m_dbef_amount','gf_acct_curr_tl_bal_amount','gf_ca_curr_tl_bal_amount','gf_crcd_curr_tl_bal_amount','gf_curr_cnsl_bal_tl_amount','gf_cust_ca_number','gf_cust_cnsl_number','gf_cust_credit_cards_number','gf_cust_debit_cards_number','gf_cust_dmdp_number','gf_cust_ifd_number','gf_cust_mortgages_number','gf_cust_pfl_number','gf_cust_pp_number','gf_cust_prepaid_cards_number','gf_cust_pricd_number','gf_cust_secur_number','gf_cust_strdp_number','gf_cust_svins_number','gf_glac_curr_tl_bal_amount','gf_ifd_curr_tl_bal_amount','gf_mtg_curr_tl_bal_amount','gf_pp_curr_tl_bal_amount','gf_secur_curr_tl_bal_amount'] },
+    { name: 't_p6r1_customer_socio_demo_board', vars: ['gf_age_number','gf_gender_desc','gf_town_name','gf_local_comm_segment_desc','gf_customer_entry_date'] },
+    { name: 't_kpfm_customer_subcategory', vars: ['gf_shown_taxo_category_id','g_customer_id','gf_shown_taxo_subcategory_id','gf_count_movements_number'] }
+  ],
+  /* 2 – Diagnóstico con movimientos */
+  [
+    { name: 't_kpfm_customer_subcategory', vars: ['gf_shown_taxo_category_id','g_customer_id','gf_shown_taxo_subcategory_id','gf_count_movements_number','gf_cutoff_date'] },
+    { name: 't_katt_fh_customer_mp', vars: ['g_customer_id','gf_cutoff_date','gf_rl_financial_cushion_amount'] }
+  ]
+];
+
+function renderSchema(caseIdx) {
+  var container = document.getElementById('nav-schema');
+  /* keep the badge, remove previous table pills */
+  var badge = container.querySelector('.schema-badge');
+  container.innerHTML = '';
+  container.appendChild(badge);
+
+  SCHEMA[caseIdx].forEach(function(tbl, ti) {
+    var drop = document.createElement('div');
+    drop.className = 'tbl-drop';
+    drop.id = 'tblDrop' + ti;
+
+    var trigger = document.createElement('div');
+    trigger.className = 'tbl-trigger';
+    trigger.innerHTML = tbl.name + ' <span class="t-arrow">▼</span>';
+    trigger.addEventListener('click', function(e) {
+      e.stopPropagation();
+      /* close siblings */
+      document.querySelectorAll('.tbl-drop.open').forEach(function(d) { if (d !== drop) d.classList.remove('open'); });
+      drop.classList.toggle('open');
+    });
+
+    var menu = document.createElement('div');
+    menu.className = 'tbl-menu';
+    menu.innerHTML = '<div class="tbl-menu-head">' + tbl.name + '</div>' +
+      tbl.vars.map(function(v) { return '<div class="tbl-var">' + v + '</div>'; }).join('');
+
+    drop.appendChild(trigger);
+    drop.appendChild(menu);
+    container.appendChild(drop);
+  });
+}
+
 function toggleNav(e) {
   e.stopPropagation();
   document.getElementById('navDropdown').classList.toggle('open');
 }
 document.addEventListener('click', function() {
   document.getElementById('navDropdown').classList.remove('open');
+  document.querySelectorAll('.tbl-drop.open').forEach(function(d) { d.classList.remove('open'); });
 });
 function switchView(view) {
   document.getElementById('navDropdown').classList.remove('open');
@@ -5415,6 +5508,7 @@ function switchView(view) {
       document.getElementById('wrap'+j).className = 'phone-wrap' + (j===i ? '' : ' hidden');
       document.getElementById('btn'+j).className = 'btn' + (j===i ? ' active' : '');
     });
+    renderSchema(i);
   }
 
   function toggleCompare() {
@@ -5449,6 +5543,9 @@ function switchView(view) {
       document.getElementById('wrap'+j).className = 'phone-wrap' + (selected[j] ? ' side' : ' hidden');
     });
   }
+
+  /* Init schema pills on load */
+  document.addEventListener('DOMContentLoaded', function() { renderSchema(0); });
 </script>
 
 
