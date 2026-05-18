@@ -91,44 +91,43 @@ body { padding-top: 44px; }
 #top-nav {
   position: fixed; top: 0; left: 0; right: 0; height: 44px;
   background: #042C53;
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex; align-items: center; justify-content: flex-end;
   padding: 0 20px;
   z-index: 9999;
   box-shadow: 0 1px 0 rgba(255,255,255,0.08), 0 2px 8px rgba(0,0,0,0.18);
 }
 
-/* ── Schema table pills ───────────────────── */
-#nav-schema { display: flex; align-items: center; gap: 5px; flex: 1; min-width: 0; padding-right: 16px; }
-.schema-badge { color: rgba(255,255,255,0.42); font-size: 9px; font-weight: 700; letter-spacing: .7px; text-transform: uppercase; margin-right: 3px; white-space: nowrap; flex-shrink: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+/* ── Schema bar (below header) ───────────────────── */
+#schema-bar { background: #EEF3F9; border-bottom: 1px solid #D4DDE9; padding: 7px 24px; }
+#schema-bar .sb-inner { display: flex; align-items: center; gap: 7px; flex-wrap: wrap; }
+#schema-bar.compare { display: flex; padding: 0; }
+.schema-compare-col { flex: 1; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; padding: 7px 20px; border-right: 1px solid #D4DDE9; }
+.schema-compare-col:last-child { border-right: none; }
+.schema-badge { color: #7A8EAA; font-size: 9px; font-weight: 700; letter-spacing: .7px; text-transform: uppercase; margin-right: 2px; white-space: nowrap; flex-shrink: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+.schema-col-label { font-size: 10px; font-weight: 700; color: #5A78A0; white-space: nowrap; margin-right: 4px; flex-shrink: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; letter-spacing: .1px; }
 .tbl-drop { position: relative; flex-shrink: 0; }
 .tbl-trigger {
   display: flex; align-items: center; gap: 5px;
-  background: rgba(255,255,255,0.08);
-  color: rgba(255,255,255,0.85);
-  border: 1px solid rgba(255,255,255,0.16);
-  border-radius: 5px;
-  padding: 3px 8px 3px 7px;
+  background: #fff; color: #1D3A6B;
+  border: 1px solid #C4D0E0; border-radius: 5px;
+  padding: 3px 9px 3px 8px;
   font-size: 10px; font-weight: 600;
   font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
-  cursor: pointer; transition: background .15s; white-space: nowrap; user-select: none;
+  cursor: pointer; transition: all .15s; white-space: nowrap; user-select: none;
 }
-.tbl-trigger:hover, .tbl-drop.open .tbl-trigger { background: rgba(255,255,255,0.18); color: #fff; }
+.tbl-trigger:hover, .tbl-drop.open .tbl-trigger { background: #E6F0FA; color: #042C53; border-color: #A0B8D0; }
 .tbl-trigger .t-arrow { font-size: 7px; opacity: .55; transition: transform .2s; display: inline-block; margin-left: 1px; }
 .tbl-drop.open .t-arrow { transform: rotate(180deg); }
 .tbl-menu {
-  display: none; position: absolute; top: calc(100% + 7px); left: 0;
-  min-width: 280px;
-  background: #fff;
+  display: none; position: absolute; top: calc(100% + 6px); left: 0;
+  min-width: 280px; background: #fff;
   border-radius: 8px;
   box-shadow: 0 8px 28px rgba(4,44,83,.22), 0 0 0 1px rgba(4,44,83,.09);
   z-index: 10001; padding: 8px 0;
 }
 .tbl-drop.open .tbl-menu { display: block; animation: ddFade .15s ease; }
 .tbl-menu-head { padding: 6px 13px 7px; font-size: 9px; font-weight: 700; letter-spacing: .7px; text-transform: uppercase; color: #7A8EAA; border-bottom: 1px solid #EEF3F8; margin-bottom: 3px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
-.tbl-var { display: flex; align-items: center; gap: 8px; padding: 3px 13px;
-  font-size: 10.5px; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
-  color: #1D3A6B; line-height: 1.6;
-}
+.tbl-var { display: flex; align-items: center; gap: 8px; padding: 3px 13px; font-size: 10.5px; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; color: #1D3A6B; line-height: 1.6; }
 .tbl-var::before { content: ''; width: 5px; height: 5px; min-width: 5px; background: #2DCCCD; border-radius: 50%; }
 
 .nav-dropdown { position: relative; }
@@ -1537,9 +1536,6 @@ footer {
 <body>
 
 <nav id="top-nav">
-  <div id="nav-schema">
-    <span class="schema-badge">Tablas:</span>
-  </div>
   <div class="nav-dropdown" id="navDropdown">
     <div class="nav-trigger" id="navTrigger" onclick="toggleNav(event)">
       <span id="navIcon">🖥️</span>
@@ -1580,6 +1576,9 @@ footer {
     </div>
   </div>
 
+<div id="schema-bar">
+  <div class="sb-inner" id="sb-inner"></div>
+</div>
 
 <div class="compare-bar" id="compareBar">
   <span class="compare-bar-label">Selecciona 2 vistas:</span>
@@ -5434,36 +5433,54 @@ var SCHEMA = [
   ]
 ];
 
+var CASE_LABELS = ['💬 Mensajes', '📊 Diagnóstico financiero', '📋 Diagnóstico con movimientos'];
+
+function makeTblDrop(tbl) {
+  var drop = document.createElement('div');
+  drop.className = 'tbl-drop';
+  var trigger = document.createElement('div');
+  trigger.className = 'tbl-trigger';
+  trigger.innerHTML = tbl.name + ' <span class="t-arrow">▼</span>';
+  trigger.addEventListener('click', function(e) {
+    e.stopPropagation();
+    document.querySelectorAll('.tbl-drop.open').forEach(function(d) { if (d !== drop) d.classList.remove('open'); });
+    drop.classList.toggle('open');
+  });
+  var menu = document.createElement('div');
+  menu.className = 'tbl-menu';
+  menu.innerHTML = '<div class="tbl-menu-head">' + tbl.name + '</div>' +
+    tbl.vars.map(function(v) { return '<div class="tbl-var">' + v + '</div>'; }).join('');
+  drop.appendChild(trigger);
+  drop.appendChild(menu);
+  return drop;
+}
+
 function renderSchema(caseIdx) {
-  var container = document.getElementById('nav-schema');
-  /* keep the badge, remove previous table pills */
-  var badge = container.querySelector('.schema-badge');
-  container.innerHTML = '';
-  container.appendChild(badge);
+  var bar = document.getElementById('schema-bar');
+  bar.className = '';
+  bar.innerHTML = '<div class="sb-inner" id="sb-inner"></div>';
+  var inner = document.getElementById('sb-inner');
+  var badge = document.createElement('span');
+  badge.className = 'schema-badge';
+  badge.textContent = 'Tablas:';
+  inner.appendChild(badge);
+  SCHEMA[caseIdx].forEach(function(tbl) { inner.appendChild(makeTblDrop(tbl)); });
+}
 
-  SCHEMA[caseIdx].forEach(function(tbl, ti) {
-    var drop = document.createElement('div');
-    drop.className = 'tbl-drop';
-    drop.id = 'tblDrop' + ti;
-
-    var trigger = document.createElement('div');
-    trigger.className = 'tbl-trigger';
-    trigger.innerHTML = tbl.name + ' <span class="t-arrow">▼</span>';
-    trigger.addEventListener('click', function(e) {
-      e.stopPropagation();
-      /* close siblings */
-      document.querySelectorAll('.tbl-drop.open').forEach(function(d) { if (d !== drop) d.classList.remove('open'); });
-      drop.classList.toggle('open');
-    });
-
-    var menu = document.createElement('div');
-    menu.className = 'tbl-menu';
-    menu.innerHTML = '<div class="tbl-menu-head">' + tbl.name + '</div>' +
-      tbl.vars.map(function(v) { return '<div class="tbl-var">' + v + '</div>'; }).join('');
-
-    drop.appendChild(trigger);
-    drop.appendChild(menu);
-    container.appendChild(drop);
+function renderSchemaCompare() {
+  var bar = document.getElementById('schema-bar');
+  bar.className = 'compare';
+  bar.innerHTML = '';
+  var activeCases = [0,1,2].filter(function(j) { return selected[j]; });
+  activeCases.forEach(function(caseIdx) {
+    var col = document.createElement('div');
+    col.className = 'schema-compare-col';
+    var lbl = document.createElement('span');
+    lbl.className = 'schema-col-label';
+    lbl.textContent = CASE_LABELS[caseIdx];
+    col.appendChild(lbl);
+    SCHEMA[caseIdx].forEach(function(tbl) { col.appendChild(makeTblDrop(tbl)); });
+    bar.appendChild(col);
   });
 }
 
@@ -5520,6 +5537,7 @@ function switchView(view) {
     if (compareMode) {
       applyCompare();
       [0,1,2].forEach(function(j) { document.getElementById('btn'+j).className = 'btn'; });
+      renderSchemaCompare();
     } else {
       solo(soloActive);
     }
@@ -5536,6 +5554,7 @@ function switchView(view) {
     selected[i] = !selected[i];
     document.getElementById('chk'+i).className = 'chk-btn' + (selected[i] ? ' checked' : '');
     applyCompare();
+    renderSchemaCompare();
   }
 
   function applyCompare() {
@@ -5544,8 +5563,7 @@ function switchView(view) {
     });
   }
 
-  /* Init schema pills on load */
-  document.addEventListener('DOMContentLoaded', function() { renderSchema(0); });
+  renderSchema(0);
 </script>
 
 
