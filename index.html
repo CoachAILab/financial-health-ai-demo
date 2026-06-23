@@ -3838,29 +3838,29 @@ window.addEventListener('load',function(){
 <!-- TAB 1: EVALUACIÓN -->
 <div class="tab-content active" id="t1">
   <h2 class="section-title">Métricas globales</h2>
-  <p class="section-sub">Visión consolidada de la calidad del sistema sobre la muestra completa de 1 000 clientes.</p>
+  <p class="section-sub">Visión consolidada de la calidad del sistema sobre la muestra completa de 999 clientes evaluados (versión v3).</p>
 
   <div class="block-title">Resumen ejecutivo</div>
   <div class="kpi-grid">
     <div class="kpi-card feat">
       <div class="kpi-label">Score medio</div>
-      <div class="kpi-value">4,65<small>/ 5</small></div>
-      <div class="kpi-meta">Mediana 4,75 · σ 0,38</div>
+      <div class="kpi-value">4,79<small>/ 5</small></div>
+      <div class="kpi-meta">Mediana 5,00 · σ 0,31</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-label">Total evaluados</div>
-      <div class="kpi-value">1 000</div>
+      <div class="kpi-value">999</div>
       <div class="kpi-meta">100 % con score válido</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-label">Rango</div>
-      <div class="kpi-value">2,16 – 5,0</div>
-      <div class="kpi-meta">P25 4,42 · P75 5,00</div>
+      <div class="kpi-value">3,3 – 5,0</div>
+      <div class="kpi-meta">P25 4,60 · P75 5,00</div>
     </div>
     <div class="kpi-card">
       <div class="kpi-label">Tasa aprobación</div>
-      <div class="kpi-value">94,4 %</div>
-      <div class="kpi-meta">944 de 1 000</div>
+      <div class="kpi-value">96,0 %</div>
+      <div class="kpi-meta">959 de 999</div>
     </div>
   </div>
 
@@ -3869,34 +3869,129 @@ window.addEventListener('load',function(){
     <div class="pill-vered aprobado">
       <div>
         <div class="label">Aprobado</div>
-        <div class="pct">94,4 % del total</div>
+        <div class="pct">96,0 % del total</div>
       </div>
-      <div class="num">944</div>
+      <div class="num">959</div>
     </div>
     <div class="pill-vered revisar">
       <div>
         <div class="label">Revisar</div>
-        <div class="pct">5,5 % del total</div>
+        <div class="pct">4,0 % del total</div>
       </div>
-      <div class="num">55</div>
+      <div class="num">40</div>
     </div>
     <div class="pill-vered rechazado">
       <div>
         <div class="label">Rechazado</div>
-        <div class="pct">0,1 % del total</div>
+        <div class="pct">0 % del total</div>
       </div>
-      <div class="num">1</div>
+      <div class="num">0</div>
     </div>
   </div>
 
   <div class="block-title">Distribución de scores</div>
   <div class="dist-bars">
-    <div class="dist-row low"><div class="dist-label">&lt;2,5</div><div class="dist-bar-bg"><div class="dist-bar-fill" style="width: 0.15%"></div></div><div class="dist-count">1 (0,1 %)</div></div>
+    <div class="dist-row low"><div class="dist-label">&lt;2,5</div><div class="dist-bar-bg"><div class="dist-bar-fill" style="width: 0%"></div></div><div class="dist-count">0 (0 %)</div></div>
     <div class="dist-row low"><div class="dist-label">2,5–3,0</div><div class="dist-bar-bg"><div class="dist-bar-fill" style="width: 0%"></div></div><div class="dist-count">0 (0 %)</div></div>
-    <div class="dist-row mid"><div class="dist-label">3,0–3,5</div><div class="dist-bar-bg"><div class="dist-bar-fill" style="width: 0.45%"></div></div><div class="dist-count">3 (0,3 %)</div></div>
-    <div class="dist-row mid"><div class="dist-label">3,5–4,0</div><div class="dist-bar-bg"><div class="dist-bar-fill" style="width: 9.18%"></div></div><div class="dist-count">61 (6,1 %)</div></div>
-    <div class="dist-row"><div class="dist-label">4,0–4,5</div><div class="dist-bar-bg"><div class="dist-bar-fill" style="width: 40.8%"></div></div><div class="dist-count">271 (27,1 %)</div></div>
-    <div class="dist-row"><div class="dist-label">4,5–5,0</div><div class="dist-bar-bg"><div class="dist-bar-fill" style="width: 100%"></div></div><div class="dist-count">664 (66,4 %)</div></div>
+    <div class="dist-row mid"><div class="dist-label">3,0–3,5</div><div class="dist-bar-bg"><div class="dist-bar-fill" style="width: 0.24%"></div></div><div class="dist-count">2 (0,2 %)</div></div>
+    <div class="dist-row mid"><div class="dist-label">3,5–4,0</div><div class="dist-bar-bg"><div class="dist-bar-fill" style="width: 3%"></div></div><div class="dist-count">25 (2,5 %)</div></div>
+    <div class="dist-row"><div class="dist-label">4,0–4,5</div><div class="dist-bar-bg"><div class="dist-bar-fill" style="width: 16.7%"></div></div><div class="dist-count">139 (13,9 %)</div></div>
+    <div class="dist-row"><div class="dist-label">4,5–5,0</div><div class="dist-bar-bg"><div class="dist-bar-fill" style="width: 100%"></div></div><div class="dist-count">833 (83,4 %)</div></div>
+  </div>
+
+  <div class="block-title">Precisión del foco</div>
+  <p style="font-size:13px; color: var(--tinta-suave); margin-bottom:16px; max-width: 880px; line-height:1.6;">
+    El <strong>foco</strong> es el área por la que abre el subtítulo (deuda, balance, tendencia, colchón o salud buena), determinada por una jerarquía objetiva sobre las métricas del cliente. Medimos si el área que el diagnóstico <em>realmente</em> abre coincide con la que <em>debería</em> según esa jerarquía.
+  </p>
+  <div class="kpi-grid">
+    <div class="kpi-card feat">
+      <div class="kpi-label">Foco correcto</div>
+      <div class="kpi-value">96,9 %</div>
+      <div class="kpi-meta">968 de 999 diagnósticos</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Foco incorrecto</div>
+      <div class="kpi-value">31</div>
+      <div class="kpi-meta">3,1 % de la muestra</div>
+    </div>
+  </div>
+  <div class="foco-cols" style="display:grid; grid-template-columns:1fr 1fr; gap:28px; margin-top:6px;">
+    <div>
+      <div class="kpi-block-title" style="margin-bottom:10px;">Foco esperado <em>según jerarquía</em></div>
+      <div class="dist-bars">
+    <div class="dist-row"><div class="dist-label">balance</div><div class="dist-bar-bg"><div class="dist-bar-fill" style="width: 100.0%"></div></div><div class="dist-count">390</div></div>
+    <div class="dist-row"><div class="dist-label">deuda</div><div class="dist-bar-bg"><div class="dist-bar-fill" style="width: 66.9%"></div></div><div class="dist-count">261</div></div>
+    <div class="dist-row"><div class="dist-label">tendencia</div><div class="dist-bar-bg"><div class="dist-bar-fill" style="width: 33.6%"></div></div><div class="dist-count">131</div></div>
+    <div class="dist-row"><div class="dist-label">colchón</div><div class="dist-bar-bg"><div class="dist-bar-fill" style="width: 29.7%"></div></div><div class="dist-count">116</div></div>
+    <div class="dist-row"><div class="dist-label">salud buena</div><div class="dist-bar-bg"><div class="dist-bar-fill" style="width: 19.2%"></div></div><div class="dist-count">75</div></div>
+    <div class="dist-row"><div class="dist-label">fortaleza</div><div class="dist-bar-bg"><div class="dist-bar-fill" style="width: 5.9%"></div></div><div class="dist-count">23</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="kpi-block-title" style="margin-bottom:10px;">Foco real <em>abierto por el modelo</em></div>
+      <div class="dist-bars">
+    <div class="dist-row"><div class="dist-label">balance</div><div class="dist-bar-bg"><div class="dist-bar-fill" style="width: 100.0%"></div></div><div class="dist-count">399</div></div>
+    <div class="dist-row"><div class="dist-label">deuda</div><div class="dist-bar-bg"><div class="dist-bar-fill" style="width: 63.7%"></div></div><div class="dist-count">254</div></div>
+    <div class="dist-row"><div class="dist-label">tendencia</div><div class="dist-bar-bg"><div class="dist-bar-fill" style="width: 33.6%"></div></div><div class="dist-count">134</div></div>
+    <div class="dist-row"><div class="dist-label">colchón</div><div class="dist-bar-bg"><div class="dist-bar-fill" style="width: 27.1%"></div></div><div class="dist-count">108</div></div>
+    <div class="dist-row"><div class="dist-label">fortaleza</div><div class="dist-bar-bg"><div class="dist-bar-fill" style="width: 19.8%"></div></div><div class="dist-count">79</div></div>
+    <div class="dist-row"><div class="dist-label">salud buena</div><div class="dist-bar-bg"><div class="dist-bar-fill" style="width: 5.3%"></div></div><div class="dist-count">21</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="kpi-block-title" style="margin-top:18px; margin-bottom:10px;">Principales confusiones <em>esperado → real</em></div>
+  <div class="dist-bars">
+    <div class="dist-row"><div class="dist-label">deuda → balance</div><div class="dist-bar-bg"><div class="dist-bar-fill" style="width: 100.0%"></div></div><div class="dist-count">7</div></div>
+    <div class="dist-row"><div class="dist-label">colchón → tendencia</div><div class="dist-bar-bg"><div class="dist-bar-fill" style="width: 71.4%"></div></div><div class="dist-count">5</div></div>
+    <div class="dist-row"><div class="dist-label">salud buena → fortaleza</div><div class="dist-bar-bg"><div class="dist-bar-fill" style="width: 28.6%"></div></div><div class="dist-count">2</div></div>
+    <div class="dist-row"><div class="dist-label">tendencia → balance</div><div class="dist-bar-bg"><div class="dist-bar-fill" style="width: 28.6%"></div></div><div class="dist-count">2</div></div>
+    <div class="dist-row"><div class="dist-label">colchón → balance</div><div class="dist-bar-bg"><div class="dist-bar-fill" style="width: 14.3%"></div></div><div class="dist-count">1</div></div>
+  </div>
+
+  <div class="block-title">Recomendaciones de inversión</div>
+  <p style="font-size:13px; color: var(--tinta-suave); margin-bottom:16px; max-width: 880px; line-height:1.6;">
+    Clientes <strong>aptos para invertir</strong> (objetivo de colchón cubierto, balance positivo, deuda controlada y excedente suficiente) que reciben un mensaje de ánimo a invertir, en lenguaje general y <em>sin nombrar productos</em>.
+  </p>
+  <div class="kpi-grid">
+    <div class="kpi-card feat">
+      <div class="kpi-label">Aptos para invertir</div>
+      <div class="kpi-value">133<small>/ 999</small></div>
+      <div class="kpi-meta">13,3 % de la muestra</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Ya invierte</div>
+      <div class="kpi-value">91</div>
+      <div class="kpi-meta">animar a seguir aportando</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Puede empezar</div>
+      <div class="kpi-value">42</div>
+      <div class="kpi-meta">plantear como opción</div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-label">Mencionan inversión</div>
+      <div class="kpi-value">82<small>/ 133</small></div>
+      <div class="kpi-meta">61,7 % de los aptos</div>
+    </div>
+  </div>
+  <div class="dist-bars" style="margin-top:8px">
+    <div class="dist-row"><div class="dist-label" style="width:150px">Ya invierte</div><div class="dist-bar-bg"><div class="dist-bar-fill" style="width: 100%"></div></div><div class="dist-count">91</div></div>
+    <div class="dist-row"><div class="dist-label" style="width:150px">Puede empezar</div><div class="dist-bar-bg"><div class="dist-bar-fill" style="width: 46.2%"></div></div><div class="dist-count">42</div></div>
+  </div>
+
+  <div class="block-title">Herramientas recomendadas</div>
+  <p style="font-size:13px; color: var(--tinta-suave); margin-bottom:16px; max-width: 880px; line-height:1.6;">
+    Cada diagnóstico cierra recomendando <strong>una herramienta del catálogo del cliente</strong> (salvo las recomendaciones de inversión, que por diseño no llevan herramienta). El reparto refleja los focos dominantes del lote: balance y deuda.
+  </p>
+  <div class="dist-bars">
+    <div class="dist-row" style="grid-template-columns: 215px 1fr 95px"><div class="dist-label" style="font-size:11px; line-height:1.3">Coach «Llegar a fin de mes»</div><div class="dist-bar-bg"><div class="dist-bar-fill" style="width: 100.0%"></div></div><div class="dist-count">324 (32,4 %)</div></div>
+    <div class="dist-row" style="grid-template-columns: 215px 1fr 95px"><div class="dist-label" style="font-size:11px; line-height:1.3">Coach «Reducir deuda»</div><div class="dist-bar-bg"><div class="dist-bar-fill" style="width: 77.5%"></div></div><div class="dist-count">251 (25,1 %)</div></div>
+    <div class="dist-row" style="grid-template-columns: 215px 1fr 95px"><div class="dist-label" style="font-size:11px; line-height:1.3">Presupuestos</div><div class="dist-bar-bg"><div class="dist-bar-fill" style="width: 68.2%"></div></div><div class="dist-count">221 (22,1 %)</div></div>
+    <div class="dist-row" style="grid-template-columns: 215px 1fr 95px"><div class="dist-label" style="font-size:11px; line-height:1.3">Coach «Aumentar colchón»</div><div class="dist-bar-bg"><div class="dist-bar-fill" style="width: 30.9%"></div></div><div class="dist-count">100 (10,0 %)</div></div>
+    <div class="dist-row" style="grid-template-columns: 215px 1fr 95px"><div class="dist-label" style="font-size:11px; line-height:1.3">Sin herramienta · inversión</div><div class="dist-bar-bg"><div class="dist-bar-fill" style="width: 26.2%"></div></div><div class="dist-count">85 (8,5 %)</div></div>
+    <div class="dist-row" style="grid-template-columns: 215px 1fr 95px"><div class="dist-label" style="font-size:11px; line-height:1.3">Coach «Conseguir un capricho»</div><div class="dist-bar-bg"><div class="dist-bar-fill" style="width: 2.8%"></div></div><div class="dist-count">9 (0,9 %)</div></div>
+    <div class="dist-row" style="grid-template-columns: 215px 1fr 95px"><div class="dist-label" style="font-size:11px; line-height:1.3">Apartados (Huchas)</div><div class="dist-bar-bg"><div class="dist-bar-fill" style="width: 1.5%"></div></div><div class="dist-count">5 (0,5 %)</div></div>
+    <div class="dist-row" style="grid-template-columns: 215px 1fr 95px"><div class="dist-label" style="font-size:11px; line-height:1.3">Cuenta Metas</div><div class="dist-bar-bg"><div class="dist-bar-fill" style="width: 1.2%"></div></div><div class="dist-count">4 (0,4 %)</div></div>
   </div>
 
   <div class="block-title">Cómo se evalúa cada diagnóstico</div>
@@ -3917,7 +4012,7 @@ window.addEventListener('load',function(){
     <div class="explain-block">
       <div class="explain-block-title"><span class="explain-tag" style="background:var(--dorado)">B</span> Riesgo y control <em>35 %</em></div>
       <div class="explain-item"><strong>Alucinación</strong><span>¿Inventa cifras, fechas o hechos que no están en los datos del cliente? Es el KPI más estricto: una alucinación clara → 1.</span></div>
-      <div class="explain-item"><strong>Incumplimiento de restricciones</strong><span>¿Viola alguna de las 9 reglas del sistema (uso de %, importes con decimales, etc.)? Se penaliza por cantidad y gravedad.</span></div>
+      <div class="explain-item"><strong>Incumplimiento de restricciones</strong><span>¿Viola alguna de las 11 reglas del sistema (uso de %, importes con decimales, foco, herramientas, etc.)? Se penaliza por cantidad y gravedad.</span></div>
       <div class="explain-item"><strong>Desviación de comportamiento</strong><span>¿El tono se ajusta a un asesor financiero empático y profesional? Penaliza tonos fríos, alarmistas o demasiado técnicos.</span></div>
     </div>
 
@@ -3943,48 +4038,189 @@ window.addEventListener('load',function(){
   <div class="block-title">Scores por KPI</div>
   <div class="kpi-block">
     <div class="kpi-block-title">Calidad de respuesta <em>peso 40 %</em></div>
-    <div class="kpi-line"><div class="kpi-line-name">Precisión</div><div class="score-bar-bg"><div class="score-bar-fill" style="width: 86.2%"></div></div><div class="score-num">4,31</div></div>
-    <div class="kpi-line"><div class="kpi-line-name">Relevancia</div><div class="score-bar-bg"><div class="score-bar-fill" style="width: 95.6%"></div></div><div class="score-num">4,78</div></div>
-    <div class="kpi-line"><div class="kpi-line-name">Completitud</div><div class="score-bar-bg"><div class="score-bar-fill" style="width: 95.4%"></div></div><div class="score-num">4,77</div></div>
-    <div class="kpi-line"><div class="kpi-line-name">Coherencia</div><div class="score-bar-bg"><div class="score-bar-fill" style="width: 93.4%"></div></div><div class="score-num">4,67</div></div>
-    <div class="kpi-line"><div class="kpi-line-name">Groundedness</div><div class="score-bar-bg"><div class="score-bar-fill" style="width: 94.8%"></div></div><div class="score-num">4,74</div></div>
+    <div class="kpi-line"><div class="kpi-line-name">Precisión</div><div class="score-bar-bg"><div class="score-bar-fill" style="width: 92.8%"></div></div><div class="score-num">4,64</div></div>
+    <div class="kpi-line"><div class="kpi-line-name">Relevancia</div><div class="score-bar-bg"><div class="score-bar-fill" style="width: 96.6%"></div></div><div class="score-num">4,83</div></div>
+    <div class="kpi-line"><div class="kpi-line-name">Completitud</div><div class="score-bar-bg"><div class="score-bar-fill" style="width: 98.6%"></div></div><div class="score-num">4,93</div></div>
+    <div class="kpi-line"><div class="kpi-line-name">Coherencia</div><div class="score-bar-bg"><div class="score-bar-fill" style="width: 97.6%"></div></div><div class="score-num">4,88</div></div>
+    <div class="kpi-line"><div class="kpi-line-name">Groundedness</div><div class="score-bar-bg"><div class="score-bar-fill" style="width: 96.6%"></div></div><div class="score-num">4,83</div></div>
   </div>
 
   <div class="kpi-block">
     <div class="kpi-block-title">Riesgo y control <em>peso 35 %</em></div>
-    <div class="kpi-line"><div class="kpi-line-name">Alucinación</div><div class="score-bar-bg"><div class="score-bar-fill" style="width: 99.2%"></div></div><div class="score-num">4,96</div></div>
-    <div class="kpi-line"><div class="kpi-line-name">Incumplimiento de restricciones</div><div class="score-bar-bg"><div class="score-bar-fill" style="width: 94.8%"></div></div><div class="score-num">4,74</div></div>
-    <div class="kpi-line"><div class="kpi-line-name">Desviación de comportamiento</div><div class="score-bar-bg"><div class="score-bar-fill" style="width: 98.6%"></div></div><div class="score-num">4,93</div></div>
+    <div class="kpi-line"><div class="kpi-line-name">Alucinación</div><div class="score-bar-bg"><div class="score-bar-fill" style="width: 99.8%"></div></div><div class="score-num">4,99</div></div>
+    <div class="kpi-line"><div class="kpi-line-name">Incumplimiento de restricciones</div><div class="score-bar-bg"><div class="score-bar-fill" style="width: 97.6%"></div></div><div class="score-num">4,88</div></div>
+    <div class="kpi-line"><div class="kpi-line-name">Desviación de comportamiento</div><div class="score-bar-bg"><div class="score-bar-fill" style="width: 99.8%"></div></div><div class="score-num">4,99</div></div>
   </div>
 
   <div class="kpi-block">
     <div class="kpi-block-title">Impacto de negocio <em>peso 25 %</em></div>
-    <div class="kpi-line"><div class="kpi-line-name">Utilidad</div><div class="score-bar-bg"><div class="score-bar-fill" style="width: 94.4%"></div></div><div class="score-num">4,72</div></div>
-    <div class="kpi-line"><div class="kpi-line-name">Adecuación funcional</div><div class="score-bar-bg"><div class="score-bar-fill" style="width: 95.2%"></div></div><div class="score-num">4,76</div></div>
+    <div class="kpi-line"><div class="kpi-line-name">Utilidad</div><div class="score-bar-bg"><div class="score-bar-fill" style="width: 94.2%"></div></div><div class="score-num">4,71</div></div>
+    <div class="kpi-line"><div class="kpi-line-name">Adecuación funcional</div><div class="score-bar-bg"><div class="score-bar-fill" style="width: 97.2%"></div></div><div class="score-num">4,86</div></div>
   </div>
+
+  <div class="block-title">Score medio por bloque y veredicto</div>
+  <table class="tabla-datos" style="max-width:640px;">
+    <thead><tr><th>Veredicto</th><th style="text-align:right">Calidad</th><th style="text-align:right">Riesgo</th><th style="text-align:right">Impacto</th></tr></thead>
+    <tbody>
+      <tr><td class="metric-name">Aprobado · 959 clientes</td><td class="metric-val">4,84</td><td class="metric-val">4,97</td><td class="metric-val">4,82</td></tr>
+      <tr><td class="metric-name">Revisar · 40 clientes</td><td class="metric-val">4,31</td><td class="metric-val">4,52</td><td class="metric-val" style="color:var(--coral)">3,98</td></tr>
+    </tbody>
+  </table>
+
 
   <div class="block-title">Incumplimiento de reglas</div>
   <div class="reglas-grid">
-    <div class="regla-card"><div class="regla-num">1</div><div class="regla-desc">Usa <code>%</code> o cifras porcentuales</div><div class="regla-pct">70 · 7,0 %</div></div>
-    <div class="regla-card"><div class="regla-num">5</div><div class="regla-desc">Importes con decimales sin redondear</div><div class="regla-pct">59 · 5,9 %</div></div>
-    <div class="regla-card"><div class="regla-num">2</div><div class="regla-desc">Usa "colchón real" o "colchón potencial"</div><div class="regla-pct">13 · 1,3 %</div></div>
-    <div class="regla-card"><div class="regla-num">7</div><div class="regla-desc">Título menciona datos concretos</div><div class="regla-pct">11 · 1,1 %</div></div>
-    <div class="regla-card"><div class="regla-num">8</div><div class="regla-desc">Cifras no respaldadas por datos</div><div class="regla-pct">6 · 0,6 %</div></div>
-    <div class="regla-card"><div class="regla-num">9</div><div class="regla-desc">Resumen no incluye tendencia de series</div><div class="regla-pct">6 · 0,6 %</div></div>
-    <div class="regla-card"><div class="regla-num">3</div><div class="regla-desc">Colchón cubierto pero diagnóstico negativo</div><div class="regla-pct">5 · 0,5 %</div></div>
-    <div class="regla-card"><div class="regla-num">4</div><div class="regla-desc">Colchón NO cubierto pero diagnóstico positivo</div><div class="regla-pct">5 · 0,5 %</div></div>
-    <div class="regla-card"><div class="regla-num">6</div><div class="regla-desc">Recomienda reducir gastos obligatorios</div><div class="regla-pct">2 · 0,2 %</div></div>
+    <div class="regla-card"><div class="regla-num">9</div><div class="regla-desc">Subtítulo no respeta la jerarquía de focos</div><div class="regla-pct">20 · 2,0 %</div></div>
+    <div class="regla-card"><div class="regla-num">2</div><div class="regla-desc">Cifras inventadas, desviadas o con decimales</div><div class="regla-pct">9 · 0,9 %</div></div>
+    <div class="regla-card"><div class="regla-num">5</div><div class="regla-desc">Usa <code>%</code> o cifras porcentuales</div><div class="regla-pct">9 · 0,9 %</div></div>
+    <div class="regla-card"><div class="regla-num">7</div><div class="regla-desc">Título con cifras, importes o subcategorías</div><div class="regla-pct">6 · 0,6 %</div></div>
+    <div class="regla-card"><div class="regla-num">1</div><div class="regla-desc">g_customer_id ausente o no coincide</div><div class="regla-pct">6 · 0,6 %</div></div>
+    <div class="regla-card"><div class="regla-num">3</div><div class="regla-desc">Resumen sin hallazgo de evolución temporal</div><div class="regla-pct">6 · 0,6 %</div></div>
+    <div class="regla-card"><div class="regla-num">8</div><div class="regla-desc">Subtítulo fuera de 25-40 palabras o con cifras</div><div class="regla-pct">6 · 0,6 %</div></div>
+    <div class="regla-card"><div class="regla-num">6</div><div class="regla-desc">Vocabulario "colchón real" / "colchón potencial"</div><div class="regla-pct">3 · 0,3 %</div></div>
+    <div class="regla-card"><div class="regla-num">11</div><div class="regla-desc">Recomienda herramienta inválida o fuera de lista</div><div class="regla-pct">2 · 0,2 %</div></div>
+    <div class="regla-card"><div class="regla-num">4</div><div class="regla-desc">Propone recortar subcategoría no listada</div><div class="regla-pct">2 · 0,2 %</div></div>
+    <div class="regla-card"><div class="regla-num">10</div><div class="regla-desc">Incoherencia título / subtítulo / foco</div><div class="regla-pct">2 · 0,2 %</div></div>
   </div>
 
 <hr class="section-divider" data-label="Diagnósticos bien valorados">
   <h2 class="section-title-sub">Diagnósticos bien valorados</h2>
   <p class="section-sub">Top de diagnósticos con score más alto. Despliega cada ficha para ver el detalle completo.</p>
-
-  <!-- Cliente bueno: ES·····5946 -->
-  <div class="cliente-card" data-cid="ES·····5946">
+  <!-- Cliente inversión: ES·····1470 -->
+  <div class="cliente-card" data-cid="ES·····1470">
     <div class="cliente-header" onclick="toggleCard(this)">
       <div class="cliente-id-block">
-        <div class="cliente-id">ES·····5946</div>
+        <div class="cliente-id">ES·····1470</div>
+        <div class="cliente-tag">Aprobado · Inversión</div>
+      </div>
+      <div style="display:flex; align-items:center;">
+        <div class="cliente-score"><span class="num">5,00</span><span class="max">/ 5</span></div>
+        <div class="toggle-icon">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </div>
+      </div>
+    </div>
+    <div class="cliente-body">
+
+      <div class="block-title" style="margin-top:0">Diagnóstico generado</div>
+      <div class="diag-block">
+        <div class="diag-titulo">Tus finanzas destacan por fortaleza y ahorro sólido</div>
+        <div class="diag-subtitulo">Tu situación financiera es sólida: tienes un colchón holgado que supera el objetivo, un balance positivo y una deuda controlada. Aunque la tendencia de los gastos está bajando, tu ahorro líquido también ha disminuido ligeramente en los últimos meses.</div>
+        <div class="diag-resumen">Tus ingresos se mantienen estables y tus gastos totales han bajado en los últimos meses, lo que es positivo. Tu colchón actual es de 5 745&nbsp;€, superando el objetivo de 2 296&nbsp;€ y cubriendo 9,4 meses de gastos. Aunque la tendencia del colchón es descendente, tu situación general sigue siendo sólida.</div>
+        <div class="diag-listas">
+          <div class="diag-lista-card fortalezas">
+            <div class="diag-lista-title">Fortalezas</div>
+            <ul>
+              <li>Tu colchón actual de 5 745&nbsp;€ supera el objetivo de 2 296&nbsp;€, cubriendo 9,4 meses de gastos.</li>
+              <li>Tu balance estructural es positivo, con un margen de 90&nbsp;€ al mes.</li>
+            </ul>
+          </div>
+          <div class="diag-lista-card areas">
+            <div class="diag-lista-title">Áreas de mejora</div>
+            <ul>
+              <li>La tendencia del colchón está bajando, con una media de 5 474&nbsp;€ en los últimos 3 meses frente a 5 847&nbsp;€ en los 3 meses anteriores.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="diag-rec" style="background: linear-gradient(135deg, #1B8A5A, #25a06a)">
+          <strong>Recomendación principal · Inversión</strong>
+          Tienes el colchón cubierto, balance positivo y la deuda controlada, y dispones de unos 3 449&nbsp;€ por encima de tu colchón de seguridad. Si te apetece, es buen momento para valorar empezar a invertir parte de ese excedente; la decisión es tuya y tu colchón se queda intacto.
+        </div>
+      </div>
+
+      <div class="eval-resumen" style="border-left-color:#1B8A5A">
+        <strong>Caso de inversión · <span style="color:#1B8A5A">puede_empezar</span>: </strong> cliente apto y sin inversiones todavía (excedente de 3 449&nbsp;€ sobre el colchón). La recomendación plantea empezar a invertir como una <em>opción</em>, en lenguaje general y sin nombrar productos ni herramientas — por eso esta recomendación, por diseño, no cita ninguna herramienta del catálogo.
+      </div>
+
+      <div class="block-title">Datos reales del cliente</div>
+      <table class="tabla-datos">
+        <thead><tr><th>Métrica</th><th style="text-align:right">Valor</th></tr></thead>
+        <tbody>
+          <tr><td class="metric-name">colchon_actual_eur</td><td class="metric-val">5 745&nbsp;€</td></tr>
+          <tr><td class="metric-name">colchon_objetivo_eur</td><td class="metric-val">2 296&nbsp;€</td></tr>
+          <tr><td class="metric-name">diferencia_colchon_eur</td><td class="metric-val" style="color:var(--verde)">+3 449&nbsp;€</td></tr>
+          <tr><td class="metric-name">colchon_meses_actual</td><td class="metric-val" style="color:var(--verde)">9,4</td></tr>
+          <tr><td class="metric-name">balance_estructural_eur</td><td class="metric-val" style="color:var(--verde)">+90&nbsp;€</td></tr>
+          <tr><td class="metric-name">ratio_esfuerzo_deuda</td><td class="metric-val" style="color:var(--verde)">0,034</td></tr>
+          <tr><td class="metric-name">objetivo_cubierto</td><td class="metric-val" style="color:var(--verde)">True</td></tr>
+          <tr><td class="metric-name">apto_inversion</td><td class="metric-val" style="color:var(--verde)">True · puede_empezar</td></tr>
+          <tr><td class="metric-name">excedente_invertible_eur</td><td class="metric-val" style="color:var(--verde)">3 449&nbsp;€</td></tr>
+          <tr><td class="metric-name">foco_esperado → foco_real</td><td class="metric-val" style="color:var(--verde)">salud buena → fortaleza ✓</td></tr>
+        </tbody>
+      </table>
+
+      <div class="block-title">Series temporales (últimos 6 meses)</div>
+      <div class="series-grid">
+        <div class="serie-card">
+          <div class="serie-name">Ingresos <span class="serie-tendencia estable">estable</span></div>
+          <svg class="serie-svg" viewBox="0 0 100 40" preserveAspectRatio="none">
+            <polyline points="0,21 20,20 40,20 60,19 80,19 100,18" fill="none" stroke="#004481" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+            <polyline points="0,21 20,20 40,20 60,19 80,19 100,18 100,40 0,40" fill="rgba(45,204,205,0.15)" stroke="none"/>
+          </svg>
+          <div class="serie-stats"><span>571&nbsp;€</span><span>585&nbsp;€</span></div>
+        </div>
+        <div class="serie-card">
+          <div class="serie-name">Gastos totales <span class="serie-tendencia bajando">bajando</span></div>
+          <svg class="serie-svg" viewBox="0 0 100 40" preserveAspectRatio="none">
+            <polyline points="0,8 20,18 40,14 60,24 80,28 100,30" fill="none" stroke="#D4574E" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+            <polyline points="0,8 20,18 40,14 60,24 80,28 100,30 100,40 0,40" fill="rgba(212,87,78,0.12)" stroke="none"/>
+          </svg>
+          <div class="serie-stats"><span>−823&nbsp;€</span><span>−376&nbsp;€</span></div>
+        </div>
+        <div class="serie-card">
+          <div class="serie-name">Colchón actual <span class="serie-tendencia bajando">bajando</span></div>
+          <svg class="serie-svg" viewBox="0 0 100 40" preserveAspectRatio="none">
+            <polyline points="0,12 20,14 40,18 60,22 80,26 100,24" fill="none" stroke="#14549C" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+            <polyline points="0,12 20,14 40,18 60,22 80,26 100,24 100,40 0,40" fill="rgba(20,84,156,0.12)" stroke="none"/>
+          </svg>
+          <div class="serie-stats"><span>5 847&nbsp;€</span><span>5 474&nbsp;€</span></div>
+        </div>
+        <div class="serie-card">
+          <div class="serie-name">Colchón objetivo</div>
+          <svg class="serie-svg" viewBox="0 0 100 40" preserveAspectRatio="none">
+            <polyline points="0,16 20,16 40,12 60,14 80,14 100,22" fill="none" stroke="#C9A227" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+            <polyline points="0,16 20,16 40,12 60,14 80,14 100,22 100,40 0,40" fill="rgba(201,162,39,0.12)" stroke="none"/>
+          </svg>
+          <div class="serie-stats"><span>3 633&nbsp;€</span><span>2 296&nbsp;€</span></div>
+        </div>
+      </div>
+
+      <div class="block-title">Evaluación detallada</div>
+      <div class="eval-resumen">
+        <strong>Resumen evaluador: </strong> Diagnóstico preciso y coherente que cumple con todas las reglas. Ofrece una evaluación clara y recomendaciones útiles al cliente.
+      </div>
+      <div class="eval-bloques">
+        <div class="eval-bloque">
+          <div class="eval-bloque-title">Calidad de respuesta</div>
+          <div class="eval-kpi-row"><div class="eval-kpi-name">Precisión</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:100%"></div></div><div class="eval-kpi-num">5</div></div>
+          <div class="eval-kpi-row"><div class="eval-kpi-name">Relevancia</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:100%"></div></div><div class="eval-kpi-num">5</div></div>
+          <div class="eval-kpi-row"><div class="eval-kpi-name">Completitud</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:100%"></div></div><div class="eval-kpi-num">5</div></div>
+          <div class="eval-kpi-row"><div class="eval-kpi-name">Coherencia</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:100%"></div></div><div class="eval-kpi-num">5</div></div>
+          <div class="eval-kpi-row"><div class="eval-kpi-name">Groundedness</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:100%"></div></div><div class="eval-kpi-num">5</div></div>
+        </div>
+        <div class="eval-bloque">
+          <div class="eval-bloque-title">Riesgo y control</div>
+          <div class="eval-kpi-row"><div class="eval-kpi-name">Alucinación</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:100%"></div></div><div class="eval-kpi-num">5</div></div>
+          <div class="eval-kpi-row"><div class="eval-kpi-name">Incumplimiento</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:100%"></div></div><div class="eval-kpi-num">5</div></div>
+          <div class="eval-kpi-row"><div class="eval-kpi-name">Desviación</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:100%"></div></div><div class="eval-kpi-num">5</div></div>
+        </div>
+        <div class="eval-bloque">
+          <div class="eval-bloque-title">Impacto de negocio</div>
+          <div class="eval-kpi-row"><div class="eval-kpi-name">Utilidad</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:100%"></div></div><div class="eval-kpi-num">5</div></div>
+          <div class="eval-kpi-row"><div class="eval-kpi-name">Adecuación funcional</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:100%"></div></div><div class="eval-kpi-num">5</div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <!-- Cliente bueno: ES·····2445 -->
+  <div class="cliente-card" data-cid="ES·····2445">
+    <div class="cliente-header" onclick="toggleCard(this)">
+      <div class="cliente-id-block">
+        <div class="cliente-id">ES·····2445</div>
         <div class="cliente-tag">Aprobado</div>
       </div>
       <div style="display:flex; align-items:center;">
@@ -3998,31 +4234,29 @@ window.addEventListener('load',function(){
 
       <div class="block-title" style="margin-top:0">Diagnóstico generado</div>
       <div class="diag-block">
-        <div class="diag-titulo">Vamos a darle la vuelta a tu situación juntos</div>
-        <div class="diag-subtitulo">Hay margen de mejora en tu colchón y esfuerzo en deuda</div>
-        <div class="diag-resumen">Tu situación financiera actual muestra algunas áreas de mejora. En el último año, tus ingresos han sido estables, pero tus gastos totales han bajado. Sin embargo, tu colchón actual (2 372&nbsp;€) está muy por debajo del objetivo (32 605&nbsp;€), lo que indica una falta de ahorro líquido. Además, tu cuota mensual de deuda (1 921&nbsp;€) supera dos quintas partes de tus ingresos recurrentes (2 938&nbsp;€), lo que es un indicador de sobreendeudamiento. Vamos a trabajar en reducir tus gastos prescindibles y optimizar tu deuda para mejorar tu situación.</div>
-
+        <div class="diag-titulo">Tu nivel de deuda es el punto que más reclama atención</div>
+        <div class="diag-subtitulo">El esfuerzo que dedicas a pagar deuda se está comiendo una parte demasiado grande de tus ingresos; centrar el plan en reducirla es lo más urgente. Aunque tu colchón está cubierto, el balance estructural es deficitario y la deuda está en zona de riesgo.</div>
+        <div class="diag-resumen">Tu situación financiera presenta un nivel de deuda elevado, con una cuota mensual de 932&nbsp;€ que supone más de dos quintas partes de tus ingresos recurrentes. Este esfuerzo en deuda, junto con un balance estructural negativo de −1 210&nbsp;€ al mes, indica que estás viviendo por encima de tus posibilidades. A pesar de que tu colchón de ahorro cubre más de 6 meses de gastos y está en tendencia ascendente, es crucial abordar primero la deuda y el balance para estabilizar tu situación financiera.</div>
         <div class="diag-listas">
           <div class="diag-lista-card fortalezas">
             <div class="diag-lista-title">Fortalezas</div>
             <ul>
-              <li>Tus ingresos han sido estables en los últimos meses, con una media de 2 933&nbsp;€ en los últimos 3 meses.</li>
-              <li>Tus gastos totales han bajado, con una media de 7 015&nbsp;€ en los últimos 3 meses frente a 8 875&nbsp;€ en los 3 meses anteriores.</li>
+              <li>Tu colchón de ahorro actual es de 24 987&nbsp;€, lo que cubre 10,2 meses de gastos y supera el objetivo de 6 meses.</li>
+              <li>La tendencia de tu colchón de ahorro es ascendente, con una media de los últimos 3 meses superior a la anterior.</li>
             </ul>
           </div>
           <div class="diag-lista-card areas">
             <div class="diag-lista-title">Áreas de mejora</div>
             <ul>
-              <li>Tu colchón actual (2 372&nbsp;€) está muy por debajo del objetivo (32 605&nbsp;€), lo que indica falta de ahorro líquido.</li>
-              <li>Tu cuota mensual de deuda (1 921&nbsp;€) supera dos quintas partes de tus ingresos recurrentes (2 938&nbsp;€).</li>
-              <li>Gastos prescindibles significativos: Otros gastos en Compras (672&nbsp;€) y Bares y restaurantes (514&nbsp;€).</li>
+              <li>La cuota de deuda mensual supera dos quintas partes de tus ingresos recurrentes, situándote en zona de riesgo de sobreendeudamiento.</li>
+              <li>Tu balance estructural es negativo, con gastos habituales que superan tus ingresos en 1 210&nbsp;€ al mes.</li>
+              <li>Algunas subcategorías de gasto prescindible, como 'Bares y restaurantes' y 'Mobiliario y decoración', están en tendencia ascendente.</li>
             </ul>
           </div>
         </div>
-
         <div class="diag-rec">
           <strong>Recomendación principal</strong>
-          Reducir tus gastos prescindibles, especialmente en Otros gastos en Compras (672&nbsp;€) y Bares y restaurantes (514&nbsp;€), para mejorar tu colchón y reducir tu esfuerzo en deuda.
+          Dado que tu cuota de deuda supera dos quintas partes de tus ingresos, te recomiendo encarecidamente utilizar el Coach Financiero "Reducir deuda" para trazar un plan y aliviar este peso. Este enfoque te ayudará a gestionar mejor tu deuda y mejorar tu situación financiera global.
         </div>
       </div>
 
@@ -4030,69 +4264,67 @@ window.addEventListener('load',function(){
       <table class="tabla-datos">
         <thead><tr><th>Métrica</th><th style="text-align:right">Valor</th></tr></thead>
         <tbody>
-          <tr><td class="metric-name">colchon_actual_eur</td><td class="metric-val">2 372&nbsp;€</td></tr>
-          <tr><td class="metric-name">colchon_objetivo_eur</td><td class="metric-val">32 605&nbsp;€</td></tr>
-          <tr><td class="metric-name">diferencia_colchon_eur</td><td class="metric-val" style="color:var(--coral)">−30 234&nbsp;€</td></tr>
-          <tr><td class="metric-name">mediana_ingresos_eur</td><td class="metric-val">6 852&nbsp;€</td></tr>
-          <tr><td class="metric-name">mediana_gastos_eur</td><td class="metric-val" style="color:var(--coral)">−7 512&nbsp;€</td></tr>
-          <tr><td class="metric-name">balance_estructural_eur</td><td class="metric-val" style="color:var(--coral)">−661&nbsp;€</td></tr>
-          <tr><td class="metric-name">gasto_atipico_maximo_eur</td><td class="metric-val">11 219&nbsp;€</td></tr>
-          <tr><td class="metric-name">ingreso_recurrente_ultimo_mes_eur</td><td class="metric-val">2 938&nbsp;€</td></tr>
-          <tr><td class="metric-name">esfuerzo_deuda_actual_eur</td><td class="metric-val">1 921&nbsp;€</td></tr>
-          <tr><td class="metric-name">ratio_esfuerzo_deuda</td><td class="metric-val">0,654</td></tr>
-          <tr><td class="metric-name">gf_crcd_curr_tl_bal_amount</td><td class="metric-val">5 326&nbsp;€</td></tr>
-          <tr><td class="metric-name">gf_pp_curr_tl_bal_amount</td><td class="metric-val">4 741&nbsp;€</td></tr>
+          <tr><td class="metric-name">colchon_actual_eur</td><td class="metric-val">24 987&nbsp;€</td></tr>
+          <tr><td class="metric-name">colchon_objetivo_eur</td><td class="metric-val">12 167&nbsp;€</td></tr>
+          <tr><td class="metric-name">diferencia_colchon_eur</td><td class="metric-val" style="color:var(--verde)">+12 820&nbsp;€</td></tr>
+          <tr><td class="metric-name">colchon_meses_actual</td><td class="metric-val" style="color:var(--verde)">10,2</td></tr>
+          <tr><td class="metric-name">mediana_ingresos_eur</td><td class="metric-val">1 236&nbsp;€</td></tr>
+          <tr><td class="metric-name">mediana_gastos_eur</td><td class="metric-val" style="color:var(--coral)">−2 446&nbsp;€</td></tr>
+          <tr><td class="metric-name">balance_estructural_eur</td><td class="metric-val" style="color:var(--coral)">−1 210&nbsp;€</td></tr>
+          <tr><td class="metric-name">esfuerzo_deuda_actual_eur</td><td class="metric-val">932&nbsp;€</td></tr>
+          <tr><td class="metric-name">ratio_esfuerzo_deuda</td><td class="metric-val" style="color:var(--coral)">2,733</td></tr>
+          <tr><td class="metric-name">foco_esperado → foco_real</td><td class="metric-val" style="color:var(--verde)">deuda → deuda ✓</td></tr>
         </tbody>
       </table>
 
       <div class="block-title">Series temporales (últimos 6 meses)</div>
       <div class="series-grid">
         <div class="serie-card">
-          <div class="serie-name">Ingresos <span class="serie-tendencia estable">estable</span></div>
+          <div class="serie-name">Ingresos <span class="serie-tendencia bajando">bajando</span></div>
           <svg class="serie-svg" viewBox="0 0 100 40" preserveAspectRatio="none">
-            <polyline points="0,21 20,20 40,20 60,19 80,19 100,18" fill="none" stroke="#004481" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
-            <polyline points="0,21 20,20 40,20 60,19 80,19 100,18 100,40 0,40" fill="rgba(45,204,205,0.15)" stroke="none"/>
+            <polyline points="0,12 20,16 40,18 60,22 80,26 100,28" fill="none" stroke="#004481" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+            <polyline points="0,12 20,16 40,18 60,22 80,26 100,28 100,40 0,40" fill="rgba(45,204,205,0.15)" stroke="none"/>
           </svg>
-          <div class="serie-stats"><span>2 906&nbsp;€</span><span>2 938&nbsp;€</span></div>
+          <div class="serie-stats"><span>507&nbsp;€</span><span>362&nbsp;€</span></div>
         </div>
         <div class="serie-card">
           <div class="serie-name">Gastos totales <span class="serie-tendencia bajando">bajando</span></div>
           <svg class="serie-svg" viewBox="0 0 100 40" preserveAspectRatio="none">
-            <polyline points="0,5 20,25 40,20 60,30 80,24 100,30" fill="none" stroke="#D4574E" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
-            <polyline points="0,5 20,25 40,20 60,30 80,24 100,30 100,40 0,40" fill="rgba(212,87,78,0.12)" stroke="none"/>
+            <polyline points="0,10 20,14 40,18 60,20 80,24 100,26" fill="none" stroke="#D4574E" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+            <polyline points="0,10 20,14 40,18 60,20 80,24 100,26 100,40 0,40" fill="rgba(212,87,78,0.12)" stroke="none"/>
           </svg>
-          <div class="serie-stats"><span>−10 695&nbsp;€</span><span>−6 649&nbsp;€</span></div>
+          <div class="serie-stats"><span>−2 224&nbsp;€</span><span>−1 741&nbsp;€</span></div>
         </div>
         <div class="serie-card">
-          <div class="serie-name">Colchón actual <span class="serie-tendencia bajando">bajando</span></div>
+          <div class="serie-name">Colchón actual <span class="serie-tendencia subiendo">subiendo</span></div>
           <svg class="serie-svg" viewBox="0 0 100 40" preserveAspectRatio="none">
-            <polyline points="0,24 20,18 40,9 60,35 80,24 100,20" fill="none" stroke="#14549C" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
-            <polyline points="0,24 20,18 40,9 60,35 80,24 100,20 100,40 0,40" fill="rgba(20,84,156,0.12)" stroke="none"/>
+            <polyline points="0,22 20,20 40,21 60,19 80,18 100,17" fill="none" stroke="#14549C" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+            <polyline points="0,22 20,20 40,21 60,19 80,18 100,17 100,40 0,40" fill="rgba(20,84,156,0.12)" stroke="none"/>
           </svg>
-          <div class="serie-stats"><span>2 018&nbsp;€</span><span>2 372&nbsp;€</span></div>
+          <div class="serie-stats"><span>25 693&nbsp;€</span><span>25 904&nbsp;€</span></div>
         </div>
         <div class="serie-card">
           <div class="serie-name">Colchón objetivo</div>
           <svg class="serie-svg" viewBox="0 0 100 40" preserveAspectRatio="none">
-            <polyline points="0,18 20,16 40,12 60,12 80,22 100,10" fill="none" stroke="#C9A227" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
-            <polyline points="0,18 20,16 40,12 60,12 80,22 100,10 100,40 0,40" fill="rgba(201,162,39,0.12)" stroke="none"/>
+            <polyline points="0,14 20,16 40,18 60,19 80,20 100,21" fill="none" stroke="#C9A227" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+            <polyline points="0,14 20,16 40,18 60,19 80,20 100,21 100,40 0,40" fill="rgba(201,162,39,0.12)" stroke="none"/>
           </svg>
-          <div class="serie-stats"><span>31 540&nbsp;€</span><span>32 605&nbsp;€</span></div>
+          <div class="serie-stats"><span>12 681&nbsp;€</span><span>12 167&nbsp;€</span></div>
         </div>
       </div>
 
       <div class="block-title">Gastos prescindibles del último mes</div>
       <div class="presc-list">
-        <div class="presc-pill">Otros gastos en Compras <span class="amt">672&nbsp;€</span></div>
-        <div class="presc-pill">Bares y restaurantes <span class="amt">514&nbsp;€</span></div>
-        <div class="presc-pill">Seguros salud <span class="amt">72&nbsp;€</span></div>
-        <div class="presc-pill">Servicios digitales <span class="amt">46&nbsp;€</span></div>
-        <div class="presc-pill">Cosmética y Perfumerías <span class="amt">27&nbsp;€</span></div>
+        <div class="presc-pill">Bares y restaurantes <span class="amt">153&nbsp;€</span></div>
+        <div class="presc-pill">Deportes <span class="amt">113&nbsp;€</span></div>
+        <div class="presc-pill">Mobiliario y decoración <span class="amt">22&nbsp;€</span></div>
+        <div class="presc-pill">Asociaciones <span class="amt">20&nbsp;€</span></div>
+        <div class="presc-pill">Otros gastos en Compras <span class="amt">18&nbsp;€</span></div>
       </div>
 
       <div class="block-title">Evaluación detallada</div>
       <div class="eval-resumen">
-        <strong>Resumen evaluador: </strong> El diagnóstico es preciso, relevante y coherente. Cumple todas las reglas y proporciona un valor real al cliente.
+        <strong>Resumen evaluador: </strong> El diagnóstico es impecable en precisión, relevancia, completitud y coherencia. Cumple todas las reglas y ofrece una utilidad significativa al cliente.
       </div>
       <div class="eval-bloques">
         <div class="eval-bloque">
@@ -4120,21 +4352,22 @@ window.addEventListener('load',function(){
   </div>
 
   <div style="text-align:center; padding:20px; color: var(--gris); font-size:13px; font-style:italic;">
-    Aquí se mostrarían los 5 mejor evaluados. Solo se incluye uno como demostración.
+    Caso representativo del grupo APROBADO (833 diagnósticos puntuaron 4,5 o más).
   </div>
+
 
 <hr class="section-divider" data-label="Diagnósticos con notas bajas">
   <h2 class="section-title-sub">Diagnósticos con notas bajas</h2>
   <p class="section-sub">Casos con score más bajo. Útiles para auditar dónde falla el sistema y por qué.</p>
 
-  <div class="cliente-card cliente-malo" data-cid="ES·····1155">
+  <div class="cliente-card cliente-malo" data-cid="ES·····3239">
     <div class="cliente-header" onclick="toggleCard(this)">
       <div class="cliente-id-block">
-        <div class="cliente-id">ES·····1155</div>
+        <div class="cliente-id">ES·····3239</div>
         <div class="cliente-tag revisar">Revisar</div>
       </div>
       <div style="display:flex; align-items:center;">
-        <div class="cliente-score"><span class="num">3,47</span><span class="max">/ 5</span></div>
+        <div class="cliente-score"><span class="num">3,30</span><span class="max">/ 5</span></div>
         <div class="toggle-icon">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </div>
@@ -4143,30 +4376,29 @@ window.addEventListener('load',function(){
     <div class="cliente-body">
 
       <div class="block-title" style="margin-top:0">Diagnóstico generado</div>
-      <div class="diag-block" style="border-left-color: var(--dorado)">
-        <div class="diag-titulo">¡Así se hace!, da gusto ver cómo llevas tus finanzas</div>
-        <div class="diag-subtitulo">Tu colchón actual supera el objetivo en 57 565 €</div>
-        <div class="diag-resumen">Tu situación financiera es sólida y bien gestionada. El colchón actual supera ampliamente el objetivo, lo que te proporciona una base de ahorro muy sólida. Aunque ha habido un mes con un gasto atípicamente alto (2 031&nbsp;€), tu tendencia de gastos totales es estable y tu balance estructural es positivo, con un margen de 610&nbsp;€ al mes.</div>
-
+      <div class="diag-block" style="border-left-color: var(--coral)">
+        <div class="diag-titulo">Tu colchón de ahorro necesita un empujón</div>
+        <div class="diag-subtitulo">El principal reto de tu situación es que tu colchón de ahorro está muy por debajo del objetivo y ha venido bajando en los últimos meses. Aunque tu balance es positivo y tu deuda está controlada, reforzar tu colchón es lo más urgente ahora.</div>
+        <div class="diag-resumen">Tu situación financiera presenta un colchón de ahorro muy bajo, con solo 3&nbsp;€ disponibles en el último mes, muy lejos del objetivo de 13 868&nbsp;€. Esta situación, sumada a la tendencia descendente del colchón en los últimos meses, indica que es crucial tomar medidas para reforzarlo. Por otro lado, tu balance estructural es positivo, con 506&nbsp;€ al mes, y tu esfuerzo en deuda está controlado, lo que te da cierta flexibilidad para enfocarte en aumentar tu ahorro.</div>
         <div class="diag-listas">
           <div class="diag-lista-card fortalezas">
             <div class="diag-lista-title">Fortalezas</div>
             <ul>
-              <li>Tu colchón actual de 58 547&nbsp;€ supera el objetivo de 982&nbsp;€ en 57 565&nbsp;€.</li>
-              <li>Tienes un margen estructural positivo de 610&nbsp;€ al mes.</li>
+              <li>Tu balance estructural es positivo, con un margen de 506&nbsp;€ al mes.</li>
+              <li>Tu esfuerzo en deuda está controlado, con una ratio del 19.1%.</li>
             </ul>
           </div>
           <div class="diag-lista-card areas">
             <div class="diag-lista-title">Áreas de mejora</div>
             <ul>
-              <li>La cuota de deuda ha variado significativamente, de 168&nbsp;€ a 496&nbsp;€. Es importante monitorizar esta fluctuación.</li>
+              <li>Tu colchón de ahorro está muy por debajo del objetivo y ha estado bajando en los últimos meses.</li>
+              <li>Algunas subcategorías de gasto, como 'Estética y bienestar' y 'Taxis y movilidad urbana', han mostrado tendencias al alza.</li>
             </ul>
           </div>
         </div>
-
-        <div class="diag-rec" style="background: linear-gradient(135deg, var(--dorado), #d9b53e)">
+        <div class="diag-rec" style="background: linear-gradient(135deg, var(--coral), #d97a6e)">
           <strong>Recomendación principal</strong>
-          Continuar con el ahorro sistemático y considerar la optimización de la deuda para mejorar aún más tu situación financiera.
+          Empieza por reducir los gastos prescindibles en subcategorías como 'Estética y bienestar' (25&nbsp;€) y 'Taxis y movilidad urbana' (16&nbsp;€) usando Apartados (Huchas) para aislar estos importes y destinarlos a tu colchón. Luego, considera usar el Coach Financiero 'Aumentar colchón' para crear un plan estructurado.
         </div>
       </div>
 
@@ -4174,109 +4406,63 @@ window.addEventListener('load',function(){
       <table class="tabla-datos">
         <thead><tr><th>Métrica</th><th style="text-align:right">Valor</th></tr></thead>
         <tbody>
-          <tr><td class="metric-name">colchon_actual_eur</td><td class="metric-val">58 547&nbsp;€</td></tr>
-          <tr><td class="metric-name">colchon_objetivo_eur</td><td class="metric-val">982&nbsp;€</td></tr>
-          <tr><td class="metric-name">diferencia_colchon_eur</td><td class="metric-val" style="color:var(--verde)">+57 565&nbsp;€</td></tr>
-          <tr><td class="metric-name">mediana_ingresos_eur</td><td class="metric-val">700&nbsp;€</td></tr>
-          <tr><td class="metric-name">mediana_gastos_eur</td><td class="metric-val" style="color:var(--coral)">−90&nbsp;€</td></tr>
-          <tr><td class="metric-name">balance_estructural_eur</td><td class="metric-val" style="color:var(--verde)">+610&nbsp;€</td></tr>
-          <tr><td class="metric-name">gasto_atipico_maximo_eur</td><td class="metric-val">2 031&nbsp;€</td></tr>
-          <tr><td class="metric-name">ingreso_recurrente_ultimo_mes_eur</td><td class="metric-val">704&nbsp;€</td></tr>
-          <tr><td class="metric-name">esfuerzo_deuda_actual_eur</td><td class="metric-val">168&nbsp;€</td></tr>
-          <tr><td class="metric-name">ratio_esfuerzo_deuda</td><td class="metric-val">0,239</td></tr>
-          <tr><td class="metric-name">gf_curr_cnsl_bal_tl_amount</td><td class="metric-val">10 714&nbsp;€</td></tr>
+          <tr><td class="metric-name">colchon_actual_eur</td><td class="metric-val">3&nbsp;€</td></tr>
+          <tr><td class="metric-name">colchon_objetivo_eur</td><td class="metric-val">13 868&nbsp;€</td></tr>
+          <tr><td class="metric-name">diferencia_colchon_eur</td><td class="metric-val" style="color:var(--coral)">−13 865&nbsp;€</td></tr>
+          <tr><td class="metric-name">objetivo_cubierto</td><td class="metric-val" style="color:var(--coral)">False</td></tr>
+          <tr><td class="metric-name">balance_estructural_eur</td><td class="metric-val" style="color:var(--verde)">+506&nbsp;€</td></tr>
+          <tr><td class="metric-name">esfuerzo_deuda_actual_eur</td><td class="metric-val">469&nbsp;€</td></tr>
+          <tr><td class="metric-name">ratio_esfuerzo_deuda</td><td class="metric-val">0,136</td></tr>
+          <tr><td class="metric-name">foco_esperado → foco_real</td><td class="metric-val" style="color:var(--verde)">colchón → colchón ✓</td></tr>
         </tbody>
       </table>
 
-      <div class="block-title">Series temporales (últimos 6 meses)</div>
-      <div class="series-grid">
-        <div class="serie-card">
-          <div class="serie-name">Ingresos <span class="serie-tendencia estable">estable</span></div>
-          <svg class="serie-svg" viewBox="0 0 100 40" preserveAspectRatio="none">
-            <polyline points="0,22 20,21 40,20 60,20 80,5 100,5" fill="none" stroke="#004481" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
-            <polyline points="0,22 20,21 40,20 60,20 80,5 100,5 100,40 0,40" fill="rgba(45,204,205,0.15)" stroke="none"/>
-          </svg>
-          <div class="serie-stats"><span>640&nbsp;€</span><span>704&nbsp;€</span></div>
-        </div>
-        <div class="serie-card">
-          <div class="serie-name">Gastos totales <span class="serie-tendencia subiendo">subiendo</span></div>
-          <svg class="serie-svg" viewBox="0 0 100 40" preserveAspectRatio="none">
-            <polyline points="0,15 20,32 40,32 60,32 80,32 100,32" fill="none" stroke="#D4574E" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
-          </svg>
-          <div class="serie-stats"><span>−180&nbsp;€</span><span>0&nbsp;€</span></div>
-        </div>
-        <div class="serie-card">
-          <div class="serie-name">Colchón actual <span class="serie-tendencia subiendo">subiendo</span></div>
-          <svg class="serie-svg" viewBox="0 0 100 40" preserveAspectRatio="none">
-            <polyline points="0,18 20,32 40,24 60,12 80,2 100,1" fill="none" stroke="#14549C" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
-            <polyline points="0,18 20,32 40,24 60,12 80,2 100,1 100,40 0,40" fill="rgba(20,84,156,0.12)" stroke="none"/>
-          </svg>
-          <div class="serie-stats"><span>56 009&nbsp;€</span><span>58 547&nbsp;€</span></div>
-        </div>
-        <div class="serie-card">
-          <div class="serie-name">Colchón objetivo</div>
-          <svg class="serie-svg" viewBox="0 0 100 40" preserveAspectRatio="none">
-            <polyline points="0,5 20,5 40,5 60,5 80,5 100,35" fill="none" stroke="#C9A227" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
-          </svg>
-          <div class="serie-stats"><span>1 964&nbsp;€</span><span>982&nbsp;€</span></div>
-        </div>
-      </div>
-
       <div class="block-title">Gastos prescindibles del último mes</div>
-      <div class="presc-empty">Sin gastos prescindibles registrados.</div>
+      <div class="presc-list">
+        <div class="presc-pill">Estética y bienestar <span class="amt">25&nbsp;€</span></div>
+        <div class="presc-pill">Taxis y movilidad urbana <span class="amt">16&nbsp;€</span></div>
+      </div>
 
       <div class="block-title">Evaluación detallada</div>
       <div class="eval-resumen">
-        <strong>Resumen evaluador: </strong> Diagnóstico coherente y útil, con una ligera inconsistencia en la cuota de deuda. Violación de una regla menor.
+        <strong>Resumen evaluador: </strong> Diagnóstico coherente y relevante, pero con una recomendación no aplicable y ligeras desviaciones en las cifras de las subcategorías. Revisar la recomendación para alinearla con las herramientas disponibles.
       </div>
-
-      <div class="eval-comentario">
-        <div class="eval-comentario-title">¿Por qué estas notas?</div>
-        <p><strong>Precisión 3/5</strong> y <strong>Coherencia 3/5</strong>: El diagnóstico acierta con el colchón (58 547 € vs 982 € de objetivo), pero introduce una <strong>cifra inventada</strong> al hablar de la variación de la deuda de "168 € a 496 €"; la cuota actual de deuda real es 168 €, no hay rastro de los 496 €.</p>
-        <p><strong>Alucinación 4/5</strong>: el evaluador lo considera caso leve porque la cifra inventada no es central al diagnóstico — el mensaje principal (colchón sobrado) sigue siendo correcto.</p>
-        <p><strong>Incumplimiento 3/5</strong>: viola la <strong>regla 7</strong> al meter una cifra concreta en el subtítulo ("57 565 €"), aunque el evaluador la etiquetó como regla 1 por error en la justificación.</p>
-        <p><strong>Resto 4/5</strong>: el tono es empático, la cobertura es completa y la recomendación, aunque genérica, es accionable.</p>
+      <div class="eval-resumen" style="border-left-color: var(--coral)">
+        <strong>Reglas violadas: </strong> Regla 11 — recomienda herramienta inválida (usa Apartados (Huchas) para reforzar el colchón, cuando debería ser el Coach «Aumentar colchón»).
       </div>
-
       <div class="eval-bloques">
         <div class="eval-bloque">
           <div class="eval-bloque-title">Calidad de respuesta</div>
-          <div class="eval-kpi-row"><div class="eval-kpi-name">Precisión</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill medio" style="width:60%"></div></div><div class="eval-kpi-num">3</div></div>
-          <div class="eval-just">Colchón correcto, pero cuota de deuda "de 168 € a 496 €" es inventada.</div>
-          <div class="eval-kpi-row"><div class="eval-kpi-name">Relevancia</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:80%"></div></div><div class="eval-kpi-num">4</div></div>
+          <div class="eval-kpi-row"><div class="eval-kpi-name">Precisión</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:60%"></div></div><div class="eval-kpi-num">3</div></div>
+          <div class="eval-kpi-row"><div class="eval-kpi-name">Relevancia</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:60%"></div></div><div class="eval-kpi-num">3</div></div>
           <div class="eval-kpi-row"><div class="eval-kpi-name">Completitud</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:80%"></div></div><div class="eval-kpi-num">4</div></div>
-          <div class="eval-kpi-row"><div class="eval-kpi-name">Coherencia</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill medio" style="width:60%"></div></div><div class="eval-kpi-num">3</div></div>
-          <div class="eval-just">Inconsistencia entre el área de mejora ("cuota varía") y los datos reales.</div>
-          <div class="eval-kpi-row"><div class="eval-kpi-name">Groundedness</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:80%"></div></div><div class="eval-kpi-num">4</div></div>
+          <div class="eval-kpi-row"><div class="eval-kpi-name">Coherencia</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:60%"></div></div><div class="eval-kpi-num">3</div></div>
+          <div class="eval-kpi-row"><div class="eval-kpi-name">Groundedness</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:60%"></div></div><div class="eval-kpi-num">3</div></div>
         </div>
         <div class="eval-bloque">
           <div class="eval-bloque-title">Riesgo y control</div>
-          <div class="eval-kpi-row"><div class="eval-kpi-name">Alucinación</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:80%"></div></div><div class="eval-kpi-num">4</div></div>
-          <div class="eval-kpi-row"><div class="eval-kpi-name">Incumplimiento</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill medio" style="width:60%"></div></div><div class="eval-kpi-num">3</div></div>
+          <div class="eval-kpi-row"><div class="eval-kpi-name">Alucinación</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:60%"></div></div><div class="eval-kpi-num">3</div></div>
+          <div class="eval-kpi-row"><div class="eval-kpi-name">Incumplimiento</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:60%"></div></div><div class="eval-kpi-num">3</div></div>
           <div class="eval-kpi-row"><div class="eval-kpi-name">Desviación</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:80%"></div></div><div class="eval-kpi-num">4</div></div>
-          <div class="reglas-violadas-info">
-            <strong>Reglas violadas</strong>
-            R7 (título/subtítulo con cifra concreta)
-          </div>
         </div>
         <div class="eval-bloque">
           <div class="eval-bloque-title">Impacto de negocio</div>
-          <div class="eval-kpi-row"><div class="eval-kpi-name">Utilidad</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:80%"></div></div><div class="eval-kpi-num">4</div></div>
-          <div class="eval-kpi-row"><div class="eval-kpi-name">Adecuación funcional</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:80%"></div></div><div class="eval-kpi-num">4</div></div>
+          <div class="eval-kpi-row"><div class="eval-kpi-name">Utilidad</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:60%"></div></div><div class="eval-kpi-num">3</div></div>
+          <div class="eval-kpi-row"><div class="eval-kpi-name">Adecuación funcional</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:60%"></div></div><div class="eval-kpi-num">3</div></div>
         </div>
       </div>
 
     </div>
   </div>
 
-  <div class="cliente-card cliente-malo" data-cid="ES·····8310">
+  <div class="cliente-card cliente-malo" data-cid="ES·····6491">
     <div class="cliente-header" onclick="toggleCard(this)">
       <div class="cliente-id-block">
-        <div class="cliente-id">ES·····8310</div>
+        <div class="cliente-id">ES·····6491</div>
         <div class="cliente-tag revisar">Revisar</div>
       </div>
       <div style="display:flex; align-items:center;">
-        <div class="cliente-score"><span class="num">3,50</span><span class="max">/ 5</span></div>
+        <div class="cliente-score"><span class="num">3,30</span><span class="max">/ 5</span></div>
         <div class="toggle-icon">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </div>
@@ -4285,32 +4471,30 @@ window.addEventListener('load',function(){
     <div class="cliente-body">
 
       <div class="block-title" style="margin-top:0">Diagnóstico generado</div>
-      <div class="diag-block" style="border-left-color: var(--dorado)">
-        <div class="diag-titulo">Hay varios puntos por donde podemos empezar a trabajar</div>
-        <div class="diag-subtitulo">Tu colchón actual supera el objetivo, pero hay margen de mejora en gastos y deuda</div>
-        <div class="diag-resumen">Después de revisar tu situación financiera, veo que tu colchón actual está muy por encima del objetivo, lo cual es positivo. Sin embargo, hay algunas áreas donde podemos trabajar para mejorar. Tu balance estructural es negativo, lo que indica que vives por encima de tus posibilidades. Además, tu cuota de deuda ha variado significativamente y tus gastos totales están en aumento, mientras que tus ingresos están bajando.</div>
-
+      <div class="diag-block" style="border-left-color: var(--coral)">
+        <div class="diag-titulo">Tu situación financiera destaca por su fortaleza</div>
+        <div class="diag-subtitulo">Tus finanzas muestran una posición sólida con un colchón holgado y un balance estructural positivo. Aunque hay margen de mejora en el colchón, tu situación actual es sólida y ofrece buenas bases para avanzar.</div>
+        <div class="diag-resumen">En resumen, tu situación financiera es sólida y estable. Tus ingresos han ido subiendo en los últimos meses, alcanzando una mediana de 7 856&nbsp;€. Tu balance estructural es positivo en 7 856&nbsp;€, lo que indica que tus ingresos superan a tus gastos habituales. Aunque tu colchón actual cubre 0 meses de gastos, está en tendencia ascendente. No hay deuda significativa y tu esfuerzo en deuda es controlado.</div>
         <div class="diag-listas">
           <div class="diag-lista-card fortalezas">
             <div class="diag-lista-title">Fortalezas</div>
             <ul>
-              <li>Tu colchón actual de 310 778&nbsp;€ supera ampliamente el objetivo de 29 420&nbsp;€.</li>
-              <li>Tus gastos obligatorios son relativamente bajos, lo que te da cierta flexibilidad.</li>
+              <li>Tus ingresos están en tendencia ascendente, con una mediana de 7 856&nbsp;€.</li>
+              <li>Tu balance estructural es positivo en 7 856&nbsp;€, indicando que tus ingresos superan a tus gastos habituales.</li>
+              <li>Tu esfuerzo en deuda es controlado, con un ratio del 4.9%.</li>
             </ul>
           </div>
           <div class="diag-lista-card areas">
             <div class="diag-lista-title">Áreas de mejora</div>
             <ul>
-              <li>Tu balance estructural es negativo, lo que indica que vives por encima de tus posibilidades.</li>
-              <li>Tu cuota de deuda ha variado significativamente, de 0&nbsp;€ a 1 665&nbsp;€.</li>
-              <li>Tienes gastos prescindibles significativos, especialmente en Bares y restaurantes (1 023&nbsp;€).</li>
+              <li>Tu colchón actual cubre 0 meses de gastos, está por debajo del objetivo de 6 meses.</li>
+              <li>Aunque tus gastos totales son estables, podrías considerar reducir algunos gastos discrecionales para fortalecer tu colchón.</li>
             </ul>
           </div>
         </div>
-
-        <div class="diag-rec" style="background: linear-gradient(135deg, var(--dorado), #d9b53e)">
+        <div class="diag-rec" style="background: linear-gradient(135deg, var(--coral), #d97a6e)">
           <strong>Recomendación principal</strong>
-          Considera reducir tus gastos en Bares y restaurantes, que son prescindibles y representan un gasto significativo de 1 023 €. Esto podría ayudarte a mejorar tu balance estructural y reducir la presión sobre tu deuda.
+          Dado que tu situación financiera es sólida y tu colchón está en tendencia ascendente, te recomiendo considerar el uso de Apartados (Huchas) para separar un importe puntual y reforzar tu colchón. Esto te ayudará a alcanzar tu objetivo de 6 meses de gastos en tu colchón de ahorro.
         </div>
       </div>
 
@@ -4318,103 +4502,43 @@ window.addEventListener('load',function(){
       <table class="tabla-datos">
         <thead><tr><th>Métrica</th><th style="text-align:right">Valor</th></tr></thead>
         <tbody>
-          <tr><td class="metric-name">colchon_actual_eur</td><td class="metric-val">310 778&nbsp;€</td></tr>
-          <tr><td class="metric-name">colchon_objetivo_eur</td><td class="metric-val">29 420&nbsp;€</td></tr>
-          <tr><td class="metric-name">diferencia_colchon_eur</td><td class="metric-val" style="color:var(--verde)">+281 358&nbsp;€</td></tr>
-          <tr><td class="metric-name">mediana_ingresos_eur</td><td class="metric-val">1 004&nbsp;€</td></tr>
-          <tr><td class="metric-name">mediana_gastos_eur</td><td class="metric-val" style="color:var(--coral)">−7 366&nbsp;€</td></tr>
-          <tr><td class="metric-name">balance_estructural_eur</td><td class="metric-val" style="color:var(--coral)">−6 362&nbsp;€</td></tr>
-          <tr><td class="metric-name">gasto_atipico_maximo_eur</td><td class="metric-val">12 138&nbsp;€</td></tr>
-          <tr><td class="metric-name">ingreso_recurrente_ultimo_mes_eur</td><td class="metric-val">8 411&nbsp;€</td></tr>
+          <tr><td class="metric-name">colchon_actual_eur</td><td class="metric-val">60&nbsp;€</td></tr>
+          <tr><td class="metric-name">colchon_objetivo_eur</td><td class="metric-val">0&nbsp;€</td></tr>
+          <tr><td class="metric-name">objetivo_cubierto</td><td class="metric-val">True</td></tr>
+          <tr><td class="metric-name">balance_estructural_eur</td><td class="metric-val" style="color:var(--verde)">+7 856&nbsp;€</td></tr>
+          <tr><td class="metric-name">mediana_ingresos_eur</td><td class="metric-val">7 856&nbsp;€</td></tr>
+          <tr><td class="metric-name">esfuerzo_deuda_actual_eur</td><td class="metric-val">327&nbsp;€</td></tr>
+          <tr><td class="metric-name">ratio_esfuerzo_deuda</td><td class="metric-val">0,042</td></tr>
+          <tr><td class="metric-name">foco_esperado → foco_real</td><td class="metric-val" style="color:var(--coral)">colchón → fortaleza ✗</td></tr>
         </tbody>
       </table>
 
-      <div class="block-title">Series temporales (últimos 6 meses)</div>
-      <div class="series-grid">
-        <div class="serie-card">
-          <div class="serie-name">Ingresos <span class="serie-tendencia bajando">bajando</span></div>
-          <svg class="serie-svg" viewBox="0 0 100 40" preserveAspectRatio="none">
-            <polyline points="0,18 20,14 40,10 60,27 80,28 100,28" fill="none" stroke="#D4574E" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
-            <polyline points="0,18 20,14 40,10 60,27 80,28 100,28 100,40 0,40" fill="rgba(212,87,78,0.12)" stroke="none"/>
-          </svg>
-          <div class="serie-stats"><span>8 570&nbsp;€</span><span>8 411&nbsp;€</span></div>
-        </div>
-        <div class="serie-card">
-          <div class="serie-name">Gastos totales <span class="serie-tendencia subiendo">subiendo</span></div>
-          <svg class="serie-svg" viewBox="0 0 100 40" preserveAspectRatio="none">
-            <polyline points="0,22 20,35 40,25 60,28 80,3 100,21" fill="none" stroke="#D4574E" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
-            <polyline points="0,22 20,35 40,25 60,28 80,3 100,21 100,40 0,40" fill="rgba(212,87,78,0.12)" stroke="none"/>
-          </svg>
-          <div class="serie-stats"><span>−7 331&nbsp;€</span><span>−7 402&nbsp;€</span></div>
-        </div>
-        <div class="serie-card">
-          <div class="serie-name">Colchón actual <span class="serie-tendencia subiendo">subiendo</span></div>
-          <svg class="serie-svg" viewBox="0 0 100 40" preserveAspectRatio="none">
-            <polyline points="0,20 20,24 40,29 60,33 80,2 100,8" fill="none" stroke="#14549C" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
-            <polyline points="0,20 20,24 40,29 60,33 80,2 100,8 100,40 0,40" fill="rgba(20,84,156,0.12)" stroke="none"/>
-          </svg>
-          <div class="serie-stats"><span>298 619&nbsp;€</span><span>310 778&nbsp;€</span></div>
-        </div>
-        <div class="serie-card">
-          <div class="serie-name">Colchón objetivo</div>
-          <svg class="serie-svg" viewBox="0 0 100 40" preserveAspectRatio="none">
-            <polyline points="0,2 20,21 40,21 60,26 80,33 100,26" fill="none" stroke="#C9A227" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
-          </svg>
-          <div class="serie-stats"><span>36 328&nbsp;€</span><span>29 420&nbsp;€</span></div>
-        </div>
-      </div>
-
-      <div class="block-title">Gastos prescindibles del último mes</div>
-      <div class="presc-list">
-        <div class="presc-pill">Bares y restaurantes <span class="amt">1 023&nbsp;€</span></div>
-        <div class="presc-pill">Estética y bienestar <span class="amt">249&nbsp;€</span></div>
-        <div class="presc-pill">Seguros salud <span class="amt">217&nbsp;€</span></div>
-        <div class="presc-pill">Estancos <span class="amt">213&nbsp;€</span></div>
-        <div class="presc-pill">Otros gastos en Compras <span class="amt">182&nbsp;€</span></div>
-        <div class="presc-pill">Loterías y Juegos de azar <span class="amt">132&nbsp;€</span></div>
-        <div class="presc-pill">Electrónica y electrodomésticos <span class="amt">16&nbsp;€</span></div>
-        <div class="presc-pill">Otros gastos en Ocio <span class="amt">12&nbsp;€</span></div>
-        <div class="presc-pill">Reformas y mantenimiento <span class="amt">10&nbsp;€</span></div>
-      </div>
-
       <div class="block-title">Evaluación detallada</div>
       <div class="eval-resumen">
-        <strong>Resumen evaluador: </strong> Diagnóstico coherente pero con algunas cifras incorrectas. Recomendación útil pero necesita corrección de cifras.
+        <strong>Resumen evaluador: </strong> El diagnóstico es generalmente bueno pero falla en relevancia al no enfocarse en el área más crítica (colchón). Además, hay una ligera inexactitud en el informe del colchón y algunas inconsistencias en el lenguaje utilizado.
       </div>
-
-      <div class="eval-comentario">
-        <div class="eval-comentario-title">¿Por qué estas notas?</div>
-        <p><strong>Precisión 3/5</strong> y <strong>Groundedness 3/5</strong>: las cifras principales del colchón (310 778 € vs 29 420 € de objetivo) y de Bares y restaurantes (1 023 €) son correctas, pero el diagnóstico introduce una <strong>variación inventada de la deuda "de 0 € a 1 665 €"</strong> que no aparece en los datos reales — el cliente no tiene deuda activa.</p>
-        <p><strong>Coherencia 4/5</strong> y <strong>Relevancia 4/5</strong>: pese al error, el mensaje principal es coherente: colchón sobrado, balance estructural negativo, gastos prescindibles altos en hostelería. La recomendación apunta correctamente al palanca real (Bares y restaurantes con 1 023 €).</p>
-        <p><strong>Incumplimiento 3/5</strong>: viola la <strong>regla 5</strong> al introducir importes sin redondeo claro y mezcla cifras correctas con una inventada, lo que penaliza la fiabilidad general.</p>
-        <p><strong>Resto 4/5</strong>: utilidad y adecuación funcional sólidas — la recomendación de reducir Bares y restaurantes es accionable y bien fundamentada en los datos reales.</p>
+      <div class="eval-resumen" style="border-left-color: var(--coral)">
+        <strong>Reglas violadas: </strong> Regla 5 (usa %), Regla 6 (vocabulario colchón), Regla 9 (jerarquía de focos: abre por «fortaleza» cuando el colchón es el área crítica).
       </div>
-
       <div class="eval-bloques">
         <div class="eval-bloque">
           <div class="eval-bloque-title">Calidad de respuesta</div>
-          <div class="eval-kpi-row"><div class="eval-kpi-name">Precisión</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill medio" style="width:60%"></div></div><div class="eval-kpi-num">3</div></div>
-          <div class="eval-just">Cuota de deuda "de 0 € a 1 665 €" inventada — el cliente no tiene deuda activa.</div>
-          <div class="eval-kpi-row"><div class="eval-kpi-name">Relevancia</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:80%"></div></div><div class="eval-kpi-num">4</div></div>
+          <div class="eval-kpi-row"><div class="eval-kpi-name">Precisión</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:60%"></div></div><div class="eval-kpi-num">3</div></div>
+          <div class="eval-kpi-row"><div class="eval-kpi-name">Relevancia</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:40%"></div></div><div class="eval-kpi-num">2</div></div>
           <div class="eval-kpi-row"><div class="eval-kpi-name">Completitud</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:80%"></div></div><div class="eval-kpi-num">4</div></div>
-          <div class="eval-kpi-row"><div class="eval-kpi-name">Coherencia</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:80%"></div></div><div class="eval-kpi-num">4</div></div>
-          <div class="eval-kpi-row"><div class="eval-kpi-name">Groundedness</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill medio" style="width:60%"></div></div><div class="eval-kpi-num">3</div></div>
-          <div class="eval-just">El bloque de deuda no está respaldado por las series temporales reales.</div>
+          <div class="eval-kpi-row"><div class="eval-kpi-name">Coherencia</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:60%"></div></div><div class="eval-kpi-num">3</div></div>
+          <div class="eval-kpi-row"><div class="eval-kpi-name">Groundedness</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:80%"></div></div><div class="eval-kpi-num">4</div></div>
         </div>
         <div class="eval-bloque">
           <div class="eval-bloque-title">Riesgo y control</div>
           <div class="eval-kpi-row"><div class="eval-kpi-name">Alucinación</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:80%"></div></div><div class="eval-kpi-num">4</div></div>
-          <div class="eval-kpi-row"><div class="eval-kpi-name">Incumplimiento</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill medio" style="width:60%"></div></div><div class="eval-kpi-num">3</div></div>
+          <div class="eval-kpi-row"><div class="eval-kpi-name">Incumplimiento</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:60%"></div></div><div class="eval-kpi-num">3</div></div>
           <div class="eval-kpi-row"><div class="eval-kpi-name">Desviación</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:80%"></div></div><div class="eval-kpi-num">4</div></div>
-          <div class="reglas-violadas-info">
-            <strong>Reglas violadas</strong>
-            R5 (importes con decimales / falta de redondeo)
-          </div>
         </div>
         <div class="eval-bloque">
           <div class="eval-bloque-title">Impacto de negocio</div>
-          <div class="eval-kpi-row"><div class="eval-kpi-name">Utilidad</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:80%"></div></div><div class="eval-kpi-num">4</div></div>
-          <div class="eval-kpi-row"><div class="eval-kpi-name">Adecuación funcional</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:80%"></div></div><div class="eval-kpi-num">4</div></div>
+          <div class="eval-kpi-row"><div class="eval-kpi-name">Utilidad</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:60%"></div></div><div class="eval-kpi-num">3</div></div>
+          <div class="eval-kpi-row"><div class="eval-kpi-name">Adecuación funcional</div><div class="eval-kpi-bar"><div class="eval-kpi-bar-fill" style="width:60%"></div></div><div class="eval-kpi-num">3</div></div>
         </div>
       </div>
 
@@ -4422,7 +4546,7 @@ window.addEventListener('load',function(){
   </div>
 
   <div style="text-align:center; padding:20px; color: var(--gris); font-size:13px; font-style:italic;">
-    Casos representativos del grupo REVISAR. Sólo 1 cliente del total fue RECHAZADO (score &lt; 2,5).
+    Casos representativos del grupo REVISAR. En este lote ningún cliente fue RECHAZADO (score &lt; 2,5).
   </div>
 
 </div>
