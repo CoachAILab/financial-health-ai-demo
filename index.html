@@ -1530,6 +1530,121 @@ footer {
 #informe-view .ejemplo-agrupado-tag { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.14em; text-transform:uppercase; padding:4px 10px; border-radius:4px; font-weight:600; background:var(--azul-pastel); color:var(--azul-primario); }
 #informe-view .ejemplo-agrupado-titulo { font-family:'Fraunces',serif; font-size:19px; font-weight:500; color:var(--azul-primario); }
 
+/* ── Comparativa de enfoques (tab 3) ─────────────────────────────────── */
+#informe-view .method-grid-v2 { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:8px; }
+@media(max-width:780px){ #informe-view .method-grid-v2 { grid-template-columns:1fr; } }
+#informe-view .method-card-v2 { background:#fff; border-radius:12px; border:1px solid var(--linea); overflow:hidden; }
+#informe-view .method-card-v2.attr { border-top:3px solid var(--azul-primario); }
+#informe-view .method-card-v2.mov  { border-top:3px solid var(--verde); }
+#informe-view .mcv2-header { padding:18px 20px 14px; border-bottom:1px solid var(--linea); }
+#informe-view .mcv2-tag { display:inline-block; font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:3px 10px; border-radius:5px; margin-bottom:10px; }
+#informe-view .method-card-v2.attr .mcv2-tag { background:var(--azul-pastel); color:var(--azul-primario); }
+#informe-view .method-card-v2.mov  .mcv2-tag { background:rgba(4,142,132,.1); color:var(--verde); }
+#informe-view .mcv2-title { font-family:'Fraunces',serif; font-weight:500; font-size:16px; color:var(--tinta); }
+#informe-view .mcv2-body { padding:18px 20px 20px; }
+#informe-view .mcv2-block { margin-bottom:16px; }
+#informe-view .mcv2-label { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--gris); margin-bottom:8px; }
+#informe-view .mcv2-pills { display:flex; flex-wrap:wrap; gap:6px; }
+#informe-view .mcv2-pill { border-radius:6px; padding:4px 10px; font-size:11.5px; }
+#informe-view .method-card-v2.attr .mcv2-pill { background:var(--azul-pastel); color:var(--azul-primario); }
+#informe-view .method-card-v2.mov  .mcv2-pill { background:rgba(4,142,132,.08); color:var(--verde); }
+#informe-view .mcv2-feature-list { list-style:none; }
+#informe-view .mcv2-feature-list li { display:flex; gap:8px; padding:5px 0; font-size:12.5px; color:var(--tinta-suave); border-bottom:1px solid var(--azul-fondo); line-height:1.5; }
+#informe-view .mcv2-feature-list li:last-child { border-bottom:none; }
+#informe-view .mcv2-feature-list li::before { flex-shrink:0; font-weight:700; }
+#informe-view .feat-plus::before  { content:'+'; color:var(--verde); }
+#informe-view .feat-note::before  { content:'·'; color:var(--dorado); }
+#informe-view .feat-limit::before { content:'–'; color:var(--coral); }
+
+#informe-view .score-badge-v2 { display:inline-flex; align-items:center; gap:5px; border-radius:6px; padding:4px 11px; font-size:11.5px; font-weight:600; white-space:nowrap; }
+#informe-view .score-badge-v2.attr { background:var(--azul-pastel); color:var(--azul-primario); }
+#informe-view .score-badge-v2.mov  { background:rgba(4,142,132,.1); color:var(--verde); }
+
+#informe-view .exec-quote-v2 {
+  background: linear-gradient(135deg, #003a70 0%, #004481 50%, #14549C 100%);
+  border-radius:14px; padding:32px 36px; color:#fff; position:relative; overflow:hidden;
+}
+#informe-view .exec-quote-v2::before { content:'"'; position:absolute; top:-30px; right:24px; font-size:160px; font-family:Georgia,serif; color:rgba(255,255,255,.06); line-height:1; }
+#informe-view .exec-quote-v2-badge { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,.15); border-radius:20px; padding:5px 14px; font-size:11px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; margin-bottom:16px; font-family:'JetBrains Mono',monospace; position:relative; z-index:1; }
+#informe-view .exec-quote-v2 p { font-size:15.5px; line-height:1.7; color:rgba(255,255,255,.92); max-width:780px; position:relative; z-index:1; }
+
+#informe-view .fusion-grid-v2 { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+@media(max-width:780px){ #informe-view .fusion-grid-v2 { grid-template-columns:1fr; } }
+#informe-view .fusion-col-v2 { background:#fff; border-radius:12px; border:1px solid var(--linea); padding:20px 22px; }
+#informe-view .fusion-col-v2-title { font-family:'Fraunces',serif; font-size:15px; font-weight:500; color:var(--verde); margin-bottom:14px; padding-bottom:10px; border-bottom:1px solid var(--linea); }
+#informe-view .fusion-col-v2.limit .fusion-col-v2-title { color:var(--tinta); }
+#informe-view .fusion-item-v2 { display:flex; gap:10px; padding:8px 0; font-size:12.5px; color:var(--tinta-suave); line-height:1.55; border-bottom:1px solid var(--azul-fondo); }
+#informe-view .fusion-item-v2:last-child { border-bottom:none; }
+#informe-view .fusion-dot-v2 { width:6px; height:6px; border-radius:50%; background:var(--verde); margin-top:6px; flex-shrink:0; }
+#informe-view .fusion-col-v2.limit .fusion-dot-v2 { background:var(--coral); }
+
+#informe-view .note-banner-v2 { background:var(--azul-fondo); border-left:4px solid var(--azul-luz); border-radius:0 8px 8px 0; padding:14px 18px; font-size:12.5px; color:var(--tinta-suave); line-height:1.6; margin-top:18px; }
+#informe-view .note-banner-v2 strong { color:var(--tinta); }
+
+#informe-view .final-verdict-v2 { background:var(--azul-fondo); border-radius:12px; padding:26px 28px; margin-top:8px; }
+#informe-view .final-verdict-v2-pill { display:inline-flex; align-items:center; gap:6px; background:var(--azul-primario); color:#fff; border-radius:20px; padding:5px 14px; font-size:11px; font-weight:600; letter-spacing:.05em; text-transform:uppercase; margin-bottom:14px; font-family:'JetBrains Mono',monospace; }
+#informe-view .final-verdict-v2 > p { font-size:13.5px; color:var(--tinta-suave); line-height:1.65; }
+#informe-view .final-cols-v2 { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:20px; }
+@media(max-width:780px){ #informe-view .final-cols-v2 { grid-template-columns:1fr; } }
+#informe-view .final-col-v2 { padding:16px 18px; border-radius:10px; }
+#informe-view .final-col-v2.attr { background:var(--azul-pastel); }
+#informe-view .final-col-v2.mov  { background:rgba(4,142,132,.08); }
+#informe-view .final-col-v2 h4 { font-family:'Fraunces',serif; font-size:14px; margin-bottom:6px; font-weight:500; }
+#informe-view .final-col-v2.attr h4 { color:var(--azul-primario); }
+#informe-view .final-col-v2.mov  h4 { color:var(--verde); }
+#informe-view .final-col-v2 p { font-size:12.5px; color:var(--tinta-suave); line-height:1.55; }
+
+#informe-view .var-grid-v2 { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:8px; }
+@media(max-width:780px){ #informe-view .var-grid-v2 { grid-template-columns:1fr; } }
+#informe-view .var-card-v2 { background:#fff; border-radius:12px; border:1px solid var(--linea); padding:20px 22px; }
+#informe-view .var-card-v2 h4 { font-family:'Fraunces',serif; font-size:15px; font-weight:500; color:var(--tinta); margin-bottom:4px; }
+#informe-view .var-card-v2 .vcv2-sub { font-size:11.5px; color:var(--gris); margin-bottom:16px; }
+#informe-view .var-ind-v2 { display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+#informe-view .var-ind-v2-label { font-size:11.5px; color:var(--tinta-suave); min-width:140px; flex-shrink:0; }
+#informe-view .var-bar-bg-v2 { flex:1; height:6px; background:var(--linea); border-radius:3px; overflow:hidden; }
+#informe-view .var-bar-fill-v2 { height:100%; border-radius:3px; }
+#informe-view .var-ind-v2-val { font-size:11px; font-weight:600; min-width:42px; text-align:right; flex-shrink:0; }
+#informe-view .var-result-v2 { margin-top:14px; padding:10px 14px; border-radius:8px; font-size:12px; line-height:1.5; }
+#informe-view .var-result-v2.bad  { background:var(--coral-suave); color:var(--coral); }
+#informe-view .var-result-v2.good { background:rgba(4,142,132,.08); color:var(--verde); }
+#informe-view .var-conclusion-v2 { background:var(--azul-fondo); border-radius:12px; padding:20px 24px; margin-top:8px; font-size:13px; color:var(--tinta-suave); line-height:1.75; }
+#informe-view .var-conclusion-v2 p { margin-bottom:10px; }
+#informe-view .var-conclusion-v2 p:last-child { margin-bottom:0; }
+#informe-view .var-conclusion-v2 strong { color:var(--azul-primario); }
+
+#informe-view .cost-grid-v2 { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+@media(max-width:600px){ #informe-view .cost-grid-v2 { grid-template-columns:1fr; } }
+#informe-view .cost-card-v2 { background:#fff; border-radius:10px; border:1px solid var(--linea); padding:16px 20px; display:flex; align-items:center; gap:14px; }
+#informe-view .cost-icon-v2 { width:38px; height:38px; background:var(--azul-pastel); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:17px; flex-shrink:0; }
+#informe-view .cost-card-v2 h5 { font-size:13px; font-weight:600; color:var(--tinta); margin-bottom:3px; white-space:nowrap; }
+#informe-view .cost-card-v2 p { font-size:11.5px; color:var(--gris); line-height:1.4; margin:0; }
+
+#informe-view .comp-table-v2 { width:100%; border-collapse:collapse; background:#fff; border-radius:12px; overflow:hidden; border:1px solid var(--linea); }
+#informe-view .comp-table-v2 th { background:var(--azul-fondo); font-family:'JetBrains Mono',monospace; font-size:10px; text-transform:uppercase; letter-spacing:.1em; color:var(--gris); font-weight:500; padding:12px 18px; text-align:left; border-bottom:1px solid var(--linea); }
+#informe-view .comp-table-v2 td { padding:11px 18px; font-size:13px; border-bottom:1px dashed var(--linea); vertical-align:middle; color:var(--tinta-suave); }
+#informe-view .comp-table-v2 tr:last-child td { border-bottom:none; }
+#informe-view .comp-table-v2 td:first-child { font-weight:500; color:var(--tinta); }
+
+/* fusion section v2 — left stack (diff + note) / right stack (limitation cards) */
+#informe-view .fusion-left-v2  { display:flex; flex-direction:column; gap:18px; }
+#informe-view .fusion-right-v2 { display:flex; flex-direction:column; gap:14px; }
+#informe-view .fusion-left-v2 .note-banner-v2 { margin-top:0; }
+#informe-view .fusion-stack-v2-title { font-family:'Fraunces',serif; font-size:15px; font-weight:500; color:var(--tinta); margin-bottom:2px; padding-bottom:10px; border-bottom:1px solid var(--linea); }
+
+#informe-view .limit-card-v2 { background:#fff; border-radius:12px; border:1px solid var(--linea); overflow:hidden; }
+#informe-view .limit-card-v2-top { background:var(--azul-fondo); padding:12px 16px; display:flex; align-items:center; gap:10px; font-size:12px; font-weight:700; color:var(--tinta); }
+#informe-view .limit-card-v2-top .num-v2 { width:24px; height:24px; background:var(--azul-primario); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; flex-shrink:0; }
+#informe-view .limit-card-v2-body { padding:14px 16px 16px; }
+#informe-view .mc-row-v2 { display:flex; flex-direction:column; gap:3px; padding:9px 12px; border-radius:8px; font-size:12px; line-height:1.5; margin-bottom:8px; }
+#informe-view .mc-row-v2:last-child { margin-bottom:0; }
+#informe-view .mc-row-v2.attr { background:var(--azul-pastel); }
+#informe-view .mc-row-v2.mov  { background:rgba(4,142,132,.08); }
+#informe-view .mc-label-v2 { font-size:9px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; }
+#informe-view .mc-row-v2.attr .mc-label-v2 { color:var(--azul-primario); }
+#informe-view .mc-row-v2.mov  .mc-label-v2 { color:var(--verde); }
+#informe-view .mc-text-v2 { color:var(--tinta-suave); }
+#informe-view .limit-explain-v2 { font-size:11.5px; color:var(--gris); border-top:1px solid var(--azul-fondo); padding-top:10px; margin-top:10px; line-height:1.55; }
+
 
 </style>
 </head>
@@ -3833,6 +3948,7 @@ window.addEventListener('load',function(){
 <div class="tabs" role="tablist">
   <button class="tab active" data-tab="t1"><span class="tab-num">01</span>Evaluación</button>
   <button class="tab"        data-tab="t2"><span class="tab-num">02</span>Análisis de variables</button>
+  <button class="tab"        data-tab="t3"><span class="tab-num">03</span>Comparativa de enfoques</button>
 </div>
 
 <!-- TAB 1: EVALUACIÓN -->
@@ -5465,6 +5581,310 @@ window.addEventListener('load',function(){
   ⚠️ No hay ningún diagnóstico que mencione <strong>genero</strong> ni <strong>segmento</strong>.
 </div>
 </div>
+
+<!-- ════════════ TAB 3 — COMPARATIVA DE ENFOQUES ════════════ -->
+<div class="tab-content" id="t3">
+
+  <h2 class="section-title-sub">Comparativa de enfoques</h2>
+  <p class="section-sub">Con el objetivo de evaluar la utilidad de ambos enfoques para la generación de diagnósticos financieros, se ha realizado una comparación centrada en la calidad de las conclusiones obtenidas, el nivel de contextualización disponible y la capacidad para generar recomendaciones accionables para el cliente.</p>
+  <p class="section-sub">Aunque ambos métodos permiten construir un diagnóstico financiero válido, existen diferencias significativas en el tipo de información que utilizan, en la profundidad del análisis que pueden realizar y en la forma en que trasladan las conclusiones al usuario final. En esta sección se analizan dichas diferencias, así como las fortalezas y limitaciones observadas en cada aproximación.</p>
+
+  <!-- 01 — Métodos analizados -->
+  <div class="ejemplo-agrupado-header"><span class="ejemplo-agrupado-tag">01</span><span class="ejemplo-agrupado-titulo">Métodos analizados</span></div>
+
+  <div class="method-grid-v2">
+    <div class="method-card-v2 attr">
+      <div class="mcv2-header">
+        <div class="mcv2-tag">Atributos financieros</div>
+        <div class="mcv2-title">Diagnóstico basado en atributos financieros</div>
+      </div>
+      <div class="mcv2-body">
+        <div class="mcv2-block">
+          <div class="mcv2-label">Información disponible</div>
+          <div class="mcv2-pills">
+            <span class="mcv2-pill">Ingresos</span>
+            <span class="mcv2-pill">Gastos categorizados</span>
+            <span class="mcv2-pill">Esfuerzo en deuda</span>
+            <span class="mcv2-pill">Salud financiera</span>
+            <span class="mcv2-pill">Información histórica</span>
+            <span class="mcv2-pill">Colchón financiero</span>
+          </div>
+        </div>
+        <div class="mcv2-block">
+          <div class="mcv2-label">Características</div>
+          <ul class="mcv2-feature-list">
+            <li class="feat-plus">Identifica problemas concretos y los vincula a causas específicas</li>
+            <li class="feat-plus">Genera recomendaciones accionables y personalizadas</li>
+            <li class="feat-plus">Usa conceptos comprensibles para el cliente, reduciendo tecnicismos</li>
+            <li class="feat-plus">Explica fortalezas y áreas de mejora con claridad</li>
+            <li class="feat-limit">El análisis de tendencias depende de las métricas pre-calculadas disponibles, sin acceso directo a la operativa detallada del cliente</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="method-card-v2 mov">
+      <div class="mcv2-header">
+        <div class="mcv2-tag">Balances y movimientos</div>
+        <div class="mcv2-title">Diagnóstico basado en balances y movimientos</div>
+      </div>
+      <div class="mcv2-body">
+        <div class="mcv2-block">
+          <div class="mcv2-label">Información disponible</div>
+          <div class="mcv2-pills">
+            <span class="mcv2-pill">Balances en cuenta</span>
+            <span class="mcv2-pill">Movimientos sin categorizar</span>
+            <span class="mcv2-pill">Evolución de balances</span>
+            <span class="mcv2-pill">Métricas calculadas</span>
+          </div>
+        </div>
+        <div class="mcv2-block">
+          <div class="mcv2-label">Características</div>
+          <ul class="mcv2-feature-list">
+            <li class="feat-plus">Analiza tendencias y evolución temporal directamente sobre la operativa real del cliente</li>
+            <li class="feat-plus">Permite detectar patrones de comportamiento financiero (gastos recurrentes, atípicos, descubiertos)</li>
+            <li class="feat-note">Requiere métricas auxiliares para evitar conclusiones superficiales</li>
+            <li class="feat-limit">Al no categorizar el gasto, las recomendaciones tienden a ser más genéricas</li>
+            <li class="feat-limit">Menor capacidad para diferenciar el contexto entre distintos tipos de gasto</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 02 — Comparativa detallada -->
+  <div class="ejemplo-agrupado-header"><span class="ejemplo-agrupado-tag">02</span><span class="ejemplo-agrupado-titulo">Comparativa detallada</span></div>
+
+  <table class="comp-table-v2">
+    <thead>
+      <tr>
+        <th>Dimensión evaluada</th>
+        <th>Atributos financieros</th>
+        <th>Balances y movimientos</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Capacidad de diagnóstico financiero</td>
+        <td><span class="score-badge-v2 attr">Alta</span></td>
+        <td><span class="score-badge-v2 mov">Media</span></td>
+      </tr>
+      <tr>
+        <td>Accionabilidad de las recomendaciones</td>
+        <td><span class="score-badge-v2 attr">Alta</span></td>
+        <td><span class="score-badge-v2 mov">Moderada</span></td>
+      </tr>
+      <tr>
+        <td>Comprensión por parte del cliente</td>
+        <td><span class="score-badge-v2 attr">Alta</span></td>
+        <td><span class="score-badge-v2 mov">Media</span></td>
+      </tr>
+      <tr>
+        <td>Contexto financiero disponible</td>
+        <td><span class="score-badge-v2 attr">Completo</span></td>
+        <td><span class="score-badge-v2 mov">Limitado</span></td>
+      </tr>
+      <tr>
+        <td>Análisis de salud financiera reciente</td>
+        <td><span class="score-badge-v2 attr">Sí</span></td>
+        <td><span class="score-badge-v2 mov">Parcial</span></td>
+      </tr>
+      <tr>
+        <td>Detección de causas concretas</td>
+        <td><span class="score-badge-v2 attr">Sí</span></td>
+        <td><span class="score-badge-v2 mov">Limitada</span></td>
+      </tr>
+      <tr>
+        <td>Análisis de tendencias históricas</td>
+        <td><span class="score-badge-v2 attr">Parcial · depende de métricas precalculadas</span></td>
+        <td><span class="score-badge-v2 mov">Alto · acceso directo a la evolución temporal</span></td>
+      </tr>
+      <tr>
+        <td>Interacción con el cliente</td>
+        <td><span class="score-badge-v2 attr">Alta</span></td>
+        <td><span class="score-badge-v2 mov">Reducida</span></td>
+      </tr>
+      <tr>
+        <td>Robustez de las conclusiones</td>
+        <td><span class="score-badge-v2 attr">Alta</span></td>
+        <td><span class="score-badge-v2 mov">Media</span></td>
+      </tr>
+      <tr>
+        <td>Necesidad de métricas adicionales</td>
+        <td><span class="score-badge-v2 attr">No requiere</span></td>
+        <td><span class="score-badge-v2 mov">Necesaria</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 03 — Resumen ejecutivo -->
+  <div class="ejemplo-agrupado-header"><span class="ejemplo-agrupado-tag">03</span><span class="ejemplo-agrupado-titulo">Resumen ejecutivo</span></div>
+
+  <div class="exec-quote-v2">
+    <div class="exec-quote-v2-badge">💡 Conclusión principal</div>
+    <p>Los resultados obtenidos muestran que ambos enfoques son capaces de generar diagnósticos financieros consistentes. El uso de atributos financieros estructurados facilita la elaboración de conclusiones más contextualizadas, una mejor interpretación de la situación financiera del cliente y la generación de recomendaciones más específicas y accionables. Por su parte, el análisis basado en balances y movimientos ofrece una aproximación válida apoyada en tendencias, evolución temporal y patrones observados en la operativa financiera del cliente.</p>
+  </div>
+
+  <!-- 04 — Aportaciones y limitaciones del enfoque basado en balances y movimientos -->
+  <div class="ejemplo-agrupado-header"><span class="ejemplo-agrupado-tag">04</span><span class="ejemplo-agrupado-titulo">Aportaciones y limitaciones del enfoque basado en balances y movimientos</span></div>
+
+  <div class="fusion-grid-v2">
+    <div class="fusion-left-v2">
+      <div class="fusion-col-v2">
+        <div class="fusion-col-v2-title">Información diferencial aportada</div>
+        <div class="fusion-item-v2"><div class="fusion-dot-v2"></div>Detección de gastos recurrentes</div>
+        <div class="fusion-item-v2"><div class="fusion-dot-v2"></div>Detección de ingresos recurrentes</div>
+        <div class="fusion-item-v2"><div class="fusion-dot-v2"></div>Identificación de meses en descubierto</div>
+        <div class="fusion-item-v2"><div class="fusion-dot-v2"></div>Identificación de gastos atípicos</div>
+        <div class="fusion-item-v2"><div class="fusion-dot-v2"></div>Evolución de balances y productos en ventanas temporales (p. ej. 6 meses)</div>
+        <div class="fusion-item-v2"><div class="fusion-dot-v2"></div>Análisis de tendencias basado en movimientos</div>
+      </div>
+      <div class="note-banner-v2">
+        <strong>Nota importante:</strong> la mayoría de estas conclusiones también podrían obtenerse en el enfoque basado en atributos si dicha información se incorporara o derivara durante el procesamiento previo de los datos. El valor diferencial del enfoque de movimientos no radica en lo que genera por sí solo, sino en los datos brutos que pone a disposición del modelo.
+      </div>
+    </div>
+
+    <div class="fusion-right-v2">
+      <div class="fusion-stack-v2-title">Limitaciones observadas</div>
+
+      <div class="limit-card-v2">
+        <div class="limit-card-v2-top"><span class="num-v2">1</span> Pérdida de especificidad</div>
+        <div class="limit-card-v2-body">
+          <div class="mc-row-v2 attr"><span class="mc-label-v2">Atributos</span><span class="mc-text-v2">"Controlar el gasto en una subcategoría específica."</span></div>
+          <div class="mc-row-v2 mov"><span class="mc-label-v2">Movimientos</span><span class="mc-text-v2">"Controlar el gasto."</span></div>
+          <div class="limit-explain-v2">Se pierde especificidad y capacidad de actuación. La recomendación deja de ser accionable para el cliente.</div>
+        </div>
+      </div>
+
+      <div class="limit-card-v2">
+        <div class="limit-card-v2-top"><span class="num-v2">2</span> Incapacidad de distinguir contexto</div>
+        <div class="limit-card-v2-body">
+          <div class="mc-row-v2 mov"><span class="mc-label-v2">Movimientos</span><span class="mc-text-v2">Un gasto elevado en salud y un gasto elevado en electrónica pueden recibir un tratamiento similar por la falta de categorización.</span></div>
+          <div class="limit-explain-v2">El modelo pierde capacidad para interpretar correctamente el contexto. Puede emitir alertas incoherentes con la realidad del cliente.</div>
+        </div>
+      </div>
+
+      <div class="limit-card-v2">
+        <div class="limit-card-v2-top"><span class="num-v2">3</span> Ausencia de indicadores clave</div>
+        <div class="limit-card-v2-body">
+          <div class="mc-row-v2 mov"><span class="mc-label-v2">Movimientos</span><span class="mc-text-v2">No es posible afirmar con suficiente confianza que el cliente dispone de un colchón financiero adecuado al no existir dicho indicador.</span></div>
+          <div class="limit-explain-v2">La ausencia de indicadores calculados como el colchón financiero obliga al modelo a hacer inferencias inseguras o a omitir evaluaciones críticas.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Conclusión final -->
+  <div class="ejemplo-agrupado-header" style="margin-top:40px;"><span class="ejemplo-agrupado-tag">Cierre</span><span class="ejemplo-agrupado-titulo">Conclusión final</span></div>
+
+  <div class="final-verdict-v2">
+    <div class="final-verdict-v2-pill">🏆 Veredicto del análisis</div>
+    <div class="final-cols-v2">
+      <div class="final-col-v2 attr">
+        <h4>Atributos financieros</h4>
+        <p>Ofrece diagnósticos más completos, accionables y comprensibles para el cliente. Conserva la capacidad de analizar tendencias e información histórica. Puede reproducir gran parte de las capacidades del enfoque de movimientos.</p>
+      </div>
+      <div class="final-col-v2 mov">
+        <h4>Balances y movimientos</h4>
+        <p>Genera diagnósticos financieros razonables, apoyados en tendencias y evolución temporal real. Pierde contexto, capacidad de personalización y capacidad explicativa frente al enfoque de atributos.</p>
+      </div>
+    </div>
+    <p>El enfoque basado en <strong>atributos es capaz de reproducir gran parte de las capacidades</strong> del enfoque basado en movimientos, mientras que el enfoque basado en movimientos <strong>no puede reproducir muchas de las capacidades</strong> del enfoque basado en atributos debido a la falta de contexto financiero. La elección del enfoque debe estar guiada por el nivel de detalle requerido en el diagnóstico y la disponibilidad de datos estructurados.</p>
+  </div>
+
+  <hr class="section-divider" data-label="Variabilidad y coste">
+
+  <h2 class="section-title-sub">Variabilidad y coste</h2>
+  <p class="section-sub">Además de comparar las capacidades de diagnóstico de ambos enfoques, se ha analizado su comportamiento desde dos perspectivas complementarias: el coste de ejecución y la consistencia de las respuestas generadas. Esta sección resume las principales observaciones obtenidas en ambos aspectos y su impacto en el diseño de la solución.</p>
+
+  <!-- 01 — Estudio de variabilidad -->
+  <div class="ejemplo-agrupado-header"><span class="ejemplo-agrupado-tag">01</span><span class="ejemplo-agrupado-titulo">Estudio de variabilidad</span></div>
+
+  <div class="var-grid-v2">
+    <div class="var-card-v2">
+      <h4>🔄 Prompt poco estructurado</h4>
+      <div class="vcv2-sub">Mucha libertad al modelo · 5 ejecuciones independientes</div>
+      <div class="var-ind-v2">
+        <span class="var-ind-v2-label">Consistencia de fortalezas</span>
+        <div class="var-bar-bg-v2"><div class="var-bar-fill-v2" style="width:35%;background:var(--coral)"></div></div>
+        <span class="var-ind-v2-val" style="color:var(--coral)">Baja</span>
+      </div>
+      <div class="var-ind-v2">
+        <span class="var-ind-v2-label">Consistencia de mejoras</span>
+        <div class="var-bar-bg-v2"><div class="var-bar-fill-v2" style="width:30%;background:var(--coral)"></div></div>
+        <span class="var-ind-v2-val" style="color:var(--coral)">Baja</span>
+      </div>
+      <div class="var-ind-v2">
+        <span class="var-ind-v2-label">Estabilidad de relevancia</span>
+        <div class="var-bar-bg-v2"><div class="var-bar-fill-v2" style="width:40%;background:var(--dorado)"></div></div>
+        <span class="var-ind-v2-val" style="color:var(--dorado)">Media</span>
+      </div>
+      <div class="var-result-v2 bad">⚠ Variabilidad alta entre ejecuciones. Diferencias en fortalezas y áreas de mejora detectadas.</div>
+    </div>
+
+    <div class="var-card-v2">
+      <h4>🎯 Prompt estructurado</h4>
+      <div class="vcv2-sub">Instrucciones claras y detalladas · 5 ejecuciones independientes</div>
+      <div class="var-ind-v2">
+        <span class="var-ind-v2-label">Consistencia de fortalezas</span>
+        <div class="var-bar-bg-v2"><div class="var-bar-fill-v2" style="width:92%;background:var(--verde)"></div></div>
+        <span class="var-ind-v2-val" style="color:var(--verde)">Alta</span>
+      </div>
+      <div class="var-ind-v2">
+        <span class="var-ind-v2-label">Consistencia de mejoras</span>
+        <div class="var-bar-bg-v2"><div class="var-bar-fill-v2" style="width:88%;background:var(--verde)"></div></div>
+        <span class="var-ind-v2-val" style="color:var(--verde)">Alta</span>
+      </div>
+      <div class="var-ind-v2">
+        <span class="var-ind-v2-label">Estabilidad de relevancia</span>
+        <div class="var-bar-bg-v2"><div class="var-bar-fill-v2" style="width:85%;background:var(--verde)"></div></div>
+        <span class="var-ind-v2-val" style="color:var(--verde)">Alta</span>
+      </div>
+      <div class="var-result-v2 good">✓ Variabilidad significativamente reducida. Resultados altamente consistentes entre ejecuciones.</div>
+    </div>
+  </div>
+
+  <div class="var-conclusion-v2">
+    <p>Los resultados muestran que la variabilidad no depende únicamente de la cantidad de información proporcionada al modelo, sino principalmente del <strong>grado de estructuración del prompt</strong>. En escenarios donde el prompt permite mayor libertad interpretativa, las conclusiones pueden variar en la relevancia asignada a determinados aspectos del cliente, aunque sin generar contradicciones relevantes.</p>
+    <p>Sin embargo, cuando el prompt está más estructurado y guía de forma explícita el análisis, las conclusiones tienden a ser mucho más consistentes entre ejecuciones, manteniendo un patrón estable en variables relevantes, fortalezas detectadas y áreas de mejora identificadas.</p>
+    <p>En consecuencia, se concluye que la reducción de la variabilidad depende principalmente del <strong>diseño del prompt</strong>, más que del volumen de información de entrada.</p>
+  </div>
+
+  <!-- 02 — Análisis de coste -->
+  <div class="ejemplo-agrupado-header"><span class="ejemplo-agrupado-tag">02</span><span class="ejemplo-agrupado-titulo">Análisis de coste</span></div>
+
+  <div class="cost-grid-v2">
+    <div class="cost-card-v2">
+      <div class="cost-icon-v2">⚖️</div>
+      <div>
+        <h5>Coste similar en ambos enfoques</h5>
+        <p>No se han observado diferencias significativas en el coste operativo entre los dos métodos.</p>
+      </div>
+    </div>
+    <div class="cost-card-v2">
+      <div class="cost-icon-v2">📝</div>
+      <div>
+        <h5>Factor principal: tamaño del prompt</h5>
+        <p>El coste depende principalmente del tamaño del prompt, no del volumen de movimientos.</p>
+      </div>
+    </div>
+    <div class="cost-card-v2">
+      <div class="cost-icon-v2">📉</div>
+      <div>
+        <h5>Más movimientos ≠ mayor coste</h5>
+        <p>Un JSON con más movimientos no implica necesariamente un coste significativamente superior.</p>
+      </div>
+    </div>
+    <div class="cost-card-v2">
+      <div class="cost-icon-v2">🚫</div>
+      <div>
+        <h5>El coste no justifica la elección</h5>
+        <p>No se han observado diferencias de coste que justifiquen por sí solas elegir un enfoque.</p>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /t3 -->
 
 </div><!-- /tabs-wrap -->
 
